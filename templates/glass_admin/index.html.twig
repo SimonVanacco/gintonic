@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Glass index{% endblock %}
+
+{% block content %}
+    <h1>Glass index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for glass in glasses %}
+            <tr>
+                <td>{{ glass.id }}</td>
+                <td>
+                    {% if glass.icon and glass.iconFamily %}
+                        <i class="{{ glass.iconFamily }} fa-{{ glass.icon }}"></i>
+                    {% endif %}
+                </td>
+                <td>{{ glass.name }}</td>
+                <td>{{ glass.image }}</td>
+                <td>
+                    <a href="{{ path('glass_admin_show', {'id': glass.id}) }}">show</a>
+                    <a href="{{ path('glass_admin_edit', {'id': glass.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('glass_admin_new') }}">Create new</a>
+{% endblock %}

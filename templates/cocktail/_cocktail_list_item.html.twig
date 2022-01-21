@@ -1,0 +1,15 @@
+<div class="col-12 col-md-4 col-lg-3">
+    <div class="card text-white bg-dark mb-3">
+        {# <img src="..." class="card-img-top" alt="..."> #}
+        <div class="card-body">
+            <h5 class="card-title">{{ cocktail.name }}</h5>
+{#            {% if cocktail.category %}<h6 class="card-subtitle mb-2 text-muted">{{ cocktail.category }}</h6>{% endif %}#}
+            <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+            </p>
+            <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="card-link">More info</a>
+{#            <a href="#" class="card-link">Order</a>#}
+        </div>
+    </div>
+</div>

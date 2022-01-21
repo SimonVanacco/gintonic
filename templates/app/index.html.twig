@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home - {{ parent() }}{% endblock %}
+
+{% block content %}
+    <div class="row mt-4">
+        {% for cocktail in cocktails %}
+            {% include 'cocktail/_cocktail_list_item.html.twig' %}
+        {% endfor %}
+    </div>
+{% endblock %}
