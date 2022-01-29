@@ -5,11 +5,14 @@ namespace App\Controller;
 use App\Entity\Ingredient;
 use App\Form\IngredientType;
 use App\Repository\IngredientRepository;
+use App\Service\IngredientFileUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('/admin/ingredient')]
 class IngredientAdminController extends AbstractController {
@@ -22,12 +25,19 @@ class IngredientAdminController extends AbstractController {
     }
 
     #[Route('/new', name: 'ingredient_admin_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response {
+    public function new(Request $request, EntityManagerInterface $entityManager, IngredientFileUploader $fileUploader): Response {
         $ingredient = new Ingredient();
         $form = $this->createForm(IngredientType::class, $ingredient);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $photoFile = $form->get('photo')->getData();
+            if ($photoFile) {
+                $newFilename = $fileUploader->upload($photoFile);
+                $ingredient->setPhoto($newFilename);
+            }
+
             $entityManager->persist($ingredient);
             $entityManager->flush();
 
@@ -48,11 +58,18 @@ class IngredientAdminController extends AbstractController {
     }
 
     #[Route('/{id}/edit', name: 'ingredient_admin_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Ingredient $ingredient, EntityManagerInterface $entityManager): Response {
+    public function edit(Request $request, Ingredient $ingredient, EntityManagerInterface $entityManager, IngredientFileUploader $fileUploader): Response {
         $form = $this->createForm(IngredientType::class, $ingredient);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $photoFile = $form->get('photo')->getData();
+            if ($photoFile) {
+                $newFilename = $fileUploader->upload($photoFile);
+                $ingredient->setPhoto($newFilename);
+            }
+
             $entityManager->flush();
 
             return $this->redirectToRoute('ingredient_admin_index', [], Response::HTTP_SEE_OTHER);

@@ -2,7 +2,11 @@
 
     <div class="card text-white bg-dark mb-3">
         <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="card-link">
-            <img src="{{ asset(cocktail.photo|default('images/missing-cocktail.jpg')) }}" class="card-img-top" alt="{{ cocktail.name }}">
+            {% if cocktail.photo %}
+                <img src="{{ asset(cocktails_directory ~ "/" ~ cocktail.photo) }}" class="card-img-top" alt="{{ cocktail.name }}">
+            {% else %}
+                <img src="{{ asset('images/missing-cocktail.jpg') }}" class="card-img-top" alt="{{ cocktail.name }}">
+            {% endif %}
         </a>
         <div class="card-body">
             <h5 class="card-title">{{ cocktail.name }}</h5>
@@ -11,7 +15,8 @@
             {# Some quick example text to build on the card title and make up the bulk of the card's #}
             {# content. #}
             {# </p> #}
-            <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm float-end">More info</a>
+            <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm float-end">More
+                info</a>
             {# <a href="#" class="card-link">Order</a> #}
         </div>
     </div>
