@@ -1,15 +1,18 @@
-<div class="col-12 col-md-4 col-lg-3">
+<div class="col">
+
     <div class="card text-white bg-dark mb-3">
-        {# <img src="..." class="card-img-top" alt="..."> #}
+        <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="card-link">
+            <img src="{{ asset(cocktail.photo|default('images/missing-cocktail.jpg')) }}" class="card-img-top" alt="{{ cocktail.name }}">
+        </a>
         <div class="card-body">
             <h5 class="card-title">{{ cocktail.name }}</h5>
-{#            {% if cocktail.category %}<h6 class="card-subtitle mb-2 text-muted">{{ cocktail.category }}</h6>{% endif %}#}
-            <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-            </p>
-            <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="card-link">More info</a>
-{#            <a href="#" class="card-link">Order</a>#}
+            {# {% if cocktail.category %}<h6 class="card-subtitle mb-2 text-muted">{{ cocktail.category }}</h6>{% endif %} #}
+            {# <p class="card-text"> #}
+            {# Some quick example text to build on the card title and make up the bulk of the card's #}
+            {# content. #}
+            {# </p> #}
+            <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm float-end">More info</a>
+            {# <a href="#" class="card-link">Order</a> #}
         </div>
     </div>
 </div>

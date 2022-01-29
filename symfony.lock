@@ -88,6 +88,9 @@
     "laminas/laminas-code": {
         "version": "4.5.1"
     },
+    "lexik/form-filter-bundle": {
+        "version": "v7.0.2"
+    },
     "monolog/monolog": {
         "version": "2.3.5"
     },

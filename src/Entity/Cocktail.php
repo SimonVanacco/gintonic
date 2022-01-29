@@ -21,7 +21,7 @@ class Cocktail {
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $name = '';
+    private ?string $name = '';
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -80,7 +80,7 @@ class Cocktail {
         return $this->name;
     }
 
-    public function setName(string $name): self {
+    public function setName(?string $name): self {
         $this->name = $name;
 
         return $this;

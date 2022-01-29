@@ -8,13 +8,11 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Name</th>
-                <th>Description</th>
-                <th>IsInStock</th>
-                <th>IsToBuy</th>
-                <th>Photo</th>
-                <th>actions</th>
+                <th>In Stock ?</th>
+                <th>In Shopping list ?</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,10 +20,12 @@
             <tr>
                 <td>{{ ingredient.id }}</td>
                 <td>{{ ingredient.name }}</td>
-                <td>{{ ingredient.description }}</td>
-                <td>{{ ingredient.isInStock ? 'Yes' : 'No' }}</td>
-                <td>{{ ingredient.isToBuy ? 'Yes' : 'No' }}</td>
-                <td>{{ ingredient.photo }}</td>
+                <td>
+                    {% include '_partials/_boolean.html.twig' with {'entity': ingredient, 'property': 'isInStock'} %}
+                </td>
+                <td>
+                    {% include '_partials/_boolean.html.twig' with {'entity': ingredient, 'property': 'isToBuy'} %}
+                </td>
                 <td>
                     <a href="{{ path('ingredient_admin_show', {'id': ingredient.id}) }}">show</a>
                     <a href="{{ path('ingredient_admin_edit', {'id': ingredient.id}) }}">edit</a>
@@ -33,7 +33,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">No records found</td>
             </tr>
         {% endfor %}
         </tbody>

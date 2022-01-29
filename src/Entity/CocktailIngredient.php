@@ -48,6 +48,14 @@ class CocktailIngredient {
      */
     private ?Unit $unit;
 
+    public function getFormattedQuantity(): ?string {
+        if (!$this->unit) {
+            return strval($this->quantity);
+        }
+        $unitLabel = ($this->quantity > 1) ? $this->unit->getPlural() : $this->unit->getSingular();
+        return $this->quantity . " " . $unitLabel;
+    }
+
     public function getId(): ?int {
         return $this->id;
     }

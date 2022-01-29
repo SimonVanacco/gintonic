@@ -7,29 +7,46 @@
         <a href="{{ path('index') }}">
             Retour
         </a>
+        <h1 class="display-1">{{ cocktail }}</h1>
+        <hr>
         <div class="row">
             <div class="col-12 col-md-5 col-lg-4">
-                <img src="{{ asset('images/missing-cocktail.jpg') }}" class="img-fluid"/>
+                <img src="{{ asset(cocktail.photo|default('images/missing-cocktail.jpg')) }}" class="img-fluid" alt="{{ cocktail.name }}">
             </div>
             <div class="col-12 col-md-7 col-lg-8">
-                <h1 class="display-1">{{ cocktail }}</h1>
-                <hr>
-                <p class="mt-6">
-                    {% if cocktail.glass and cocktail.glass.icon and cocktail.glass.iconFamily %}
-                        <i class="{{ cocktail.glass.iconFamily }} fa-{{ cocktail.glass.icon }} text-right mr-2"></i>
-                    {% endif %}
-                    {% for tag in cocktail.tags %}
-                        <span class="badge badge-primary">{{ tag }}</span> {# Todo: Outline #}
-                    {% endfor %}
-                </p>
+{#                <p class="mt-6">#}
+{#                    {% if cocktail.glass and cocktail.glass.icon and cocktail.glass.iconFamily %}#}
+{#                        <i class="{{ cocktail.glass.iconFamily }} fa-{{ cocktail.glass.icon }} text-right mr-2"></i>#}
+{#                    {% endif %}#}
+{#                    {% for tag in cocktail.tags %}#}
+{#                        <span class="badge badge-primary">{{ tag }}</span> #}{# Todo: Outline #}
+{#                    {% endfor %}#}
+{#                </p>#}
                 {% if cocktail.description %}
                     <p class="mt-5 mb-5">{{ cocktail.description }}</p>
                 {% endif %}
                 {% if cocktail.ingredients %}
-                    <p class="h5 mt-5 mb-3">Ingredients</p>
-{#                    {% for ingredient in cocktail.ingredient %}#}
-{#                        #}
-{#                    {% endfor %}#}
+                    <p class="h5 mb-3">Ingredients</p>
+                    <div class="card card-body bg-dark">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Quantité</th>
+{#                                    <th></th>#}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cocktail_ingredient in cocktail.ingredients %}
+                                    {% set ingredient = cocktail_ingredient.ingredient %}
+                                    <tr>
+                                        <td>{{ ingredient }}</td>
+                                        <td>{{ cocktail_ingredient.formattedQuantity }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 {% endif %}
             </div>
         </div>

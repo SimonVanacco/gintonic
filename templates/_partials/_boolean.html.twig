@@ -1,0 +1,12 @@
+<span
+    {{ stimulus_controller('boolean', {
+        'value': attribute(entity, property),
+        'payload': boolean_payload(entity, property)
+    }) }}
+>
+    {% if attribute(entity, property) %}
+        <i class='fas fa-check text-success'></i>
+    {% else %}
+        <i class='fas fa-times text-danger'></i>
+    {% endif %}
+</span>
