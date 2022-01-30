@@ -5,3 +5,6 @@ import './styles/app.scss';
 import 'bootstrap';
 
 import './bootstrap';
+
+import WysiwygEditor from "./modules/wysiwygEditor";
+WysiwygEditor.init();

@@ -36,3 +36,8 @@ $dark: darken($body-bg, 1.3);
   height: 15vw;
   object-fit: cover;
 }
+
+.clickable {
+  display: inline-block;
+  cursor: pointer;
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cocktail{% endblock %}
+
+{% block content %}
+    <h1>Cocktail</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cocktail.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ cocktail.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ cocktail.description }}</td>
+            </tr>
+            <tr>
+                <th>Recipe</th>
+                <td>{{ cocktail.recipe }}</td>
+            </tr>
+            <tr>
+                <th>IsFeatured</th>
+                <td>{{ cocktail.isFeatured ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ cocktail.level }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ cocktail.photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cocktail_admin_index') }}">back to list</a>
+
+    <a href="{{ path('cocktail_admin_edit', {'id': cocktail.id}) }}">edit</a>
+
+    {{ include('cocktail_admin/_delete_form.html.twig') }}
+{% endblock %}

@@ -41,6 +41,11 @@ class Cocktail {
     /**
      * @ORM\Column(type="boolean", nullable=true)
      */
+    private bool $isEnabled = true;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
     private bool $isFeatured = false;
 
     /**
@@ -112,6 +117,16 @@ class Cocktail {
 
     public function setGlass(?Glass $glass): self {
         $this->glass = $glass;
+
+        return $this;
+    }
+
+    public function getIsEnabled(): ?bool {
+        return $this->isEnabled;
+    }
+
+    public function setIsEnabled(?bool $isEnabled): self {
+        $this->isEnabled = $isEnabled;
 
         return $this;
     }

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cocktail index{% endblock %}
+
+{% block content %}
+    <h1>Cocktail index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Enabled ?</th>
+                <th>Featured ?</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cocktail in cocktails %}
+            <tr>
+                <td>{{ cocktail.id }}</td>
+                <td>{{ cocktail.name }}</td>
+                <td>
+                    {% include '_partials/_boolean.html.twig' with {'entity': cocktail, 'property': 'isEnabled'} %}
+                </td>
+                <td>
+                    {% include '_partials/_boolean.html.twig' with {'entity': cocktail, 'property': 'isFeatured'} %}
+                </td>
+                <td>
+                    <a href="{{ path('cocktail_admin_show', {'id': cocktail.id}) }}">show</a>
+                    <a href="{{ path('cocktail_admin_edit', {'id': cocktail.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cocktail_admin_new') }}">Create new</a>
+{% endblock %}
