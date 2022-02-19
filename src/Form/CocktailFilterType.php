@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Cocktail;
 use App\Entity\Glass;
 use App\Entity\Ingredient;
+use Doctrine\ORM\Query\Expr\Join;
 use Lexik\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
 use Lexik\Bundle\FormFilterBundle\Filter\Query\QueryInterface;
 use Symfony\Component\Form\AbstractType;
@@ -33,9 +34,14 @@ class CocktailFilterType extends AbstractType {
                 'apply_filter' => function (QueryInterface $filterQuery, $field, $values) {
                     /** @var \Doctrine\ORM\QueryBuilder $qb */
                     $qb = $filterQuery->getQueryBuilder();
-                    $qb->leftJoin($filterQuery->getRootAlias() . ".ingredients", 'ci')
-                        ->leftJoin("ci.ingredient", 'ing')
-                        ->andWhere('ing.isInStock = 1');
+                    $qb->leftJoin($filterQuery->getRootAlias() . '.ingredients', 'ci')
+                        ->leftJoin('ci.ingredient', 'i1')
+                        ->leftJoin('ci.ingredient', 'i2', Join::WITH, $qb->expr()->andX(
+                            $qb->expr()->eq('i2.id', 'ci.ingredient'),
+                            $qb->expr()->eq('i2.isInStock', '1')
+                        ))
+                        ->groupBy($filterQuery->getRootAlias() . '.id')
+                        ->having('COUNT(i1.id) = COUNT(i2.id)');
                 },
             ]);
     }
