@@ -17,7 +17,7 @@ class CocktailAdminController extends AbstractController {
 
     #[Route('/', name: 'cocktail_admin_index', methods: ['GET'])]
     public function index(CocktailRepository $cocktailRepository): Response {
-        return $this->render('cocktail_admin/index.html.twig', [
+        return $this->render('admin/cocktail/index.html.twig', [
             'cocktails' => $cocktailRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class CocktailAdminController extends AbstractController {
             return $this->redirectToRoute('cocktail_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('cocktail_admin/new.html.twig', [
+        return $this->renderForm('admin/cocktail/new.html.twig', [
             'cocktail' => $cocktail,
             'form' => $form,
         ]);
@@ -50,7 +50,7 @@ class CocktailAdminController extends AbstractController {
 
     #[Route('/{id}', name: 'cocktail_admin_show', methods: ['GET'])]
     public function show(Cocktail $cocktail): Response {
-        return $this->render('cocktail_admin/show.html.twig', [
+        return $this->render('admin/cocktail/show.html.twig', [
             'cocktail' => $cocktail,
         ]);
     }
@@ -73,7 +73,7 @@ class CocktailAdminController extends AbstractController {
             return $this->redirectToRoute('cocktail_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('cocktail_admin/edit.html.twig', [
+        return $this->renderForm('admin/cocktail/edit.html.twig', [
             'cocktail' => $cocktail,
             'form' => $form,
         ]);

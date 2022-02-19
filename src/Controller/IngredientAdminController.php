@@ -17,7 +17,7 @@ class IngredientAdminController extends AbstractController {
 
     #[Route('/', name: 'ingredient_admin_index', methods: ['GET'])]
     public function index(IngredientRepository $ingredientRepository): Response {
-        return $this->render('ingredient_admin/index.html.twig', [
+        return $this->render('admin/ingredient/index.html.twig', [
             'ingredients' => $ingredientRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class IngredientAdminController extends AbstractController {
             return $this->redirectToRoute('ingredient_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('ingredient_admin/new.html.twig', [
+        return $this->renderForm('admin/ingredient/new.html.twig', [
             'ingredient' => $ingredient,
             'form' => $form,
         ]);
@@ -50,7 +50,7 @@ class IngredientAdminController extends AbstractController {
 
     #[Route('/{id}', name: 'ingredient_admin_show', methods: ['GET'])]
     public function show(Ingredient $ingredient): Response {
-        return $this->render('ingredient_admin/show.html.twig', [
+        return $this->render('admin/ingredient/show.html.twig', [
             'ingredient' => $ingredient,
         ]);
     }
@@ -73,7 +73,7 @@ class IngredientAdminController extends AbstractController {
             return $this->redirectToRoute('ingredient_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('ingredient_admin/edit.html.twig', [
+        return $this->renderForm('admin/ingredient/edit.html.twig', [
             'ingredient' => $ingredient,
             'form' => $form,
         ]);

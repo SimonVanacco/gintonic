@@ -12,14 +12,14 @@ class CocktailController extends AbstractController {
 
     #[Route('/{id}')]
     public function show(Cocktail $cocktail): Response {
-        return $this->render('cocktail/show.html.twig', [
+        return $this->render('app/cocktail/show.html.twig', [
             'cocktail' => $cocktail,
         ]);
     }
 
     #[Route('/autocomplete')]
     public function autocomplete(Cocktail $cocktail): Response {
-        return $this->render('cocktail/show.html.twig', [
+        return $this->render('app/cocktail/show.html.twig', [
             'cocktail' => $cocktail,
         ]);
     }

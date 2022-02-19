@@ -23,7 +23,7 @@
 {#                    {% endfor %}#}
 {#                </p>#}
                 {% if cocktail.description %}
-                    <p class="mt-5 mb-5">{{ cocktail.description }}</p>
+                    <p class="mt-5 mb-5">{{ cocktail.description|raw }}</p>
                 {% endif %}
                 {% if cocktail.ingredients %}
                     <p class="h5 mb-3">Ingredients</p>

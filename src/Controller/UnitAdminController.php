@@ -20,7 +20,7 @@ class UnitAdminController extends AbstractController
             ->getRepository(Unit::class)
             ->findAll();
 
-        return $this->render('unit_admin/index.html.twig', [
+        return $this->render('admin/unit/index.html.twig', [
             'units' => $units,
         ]);
     }
@@ -39,7 +39,7 @@ class UnitAdminController extends AbstractController
             return $this->redirectToRoute('unit_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('unit_admin/new.html.twig', [
+        return $this->renderForm('admin/unit/new.html.twig', [
             'unit' => $unit,
             'form' => $form,
         ]);
@@ -48,7 +48,7 @@ class UnitAdminController extends AbstractController
     #[Route('/{id}', name: 'unit_admin_show', methods: ['GET'])]
     public function show(Unit $unit): Response
     {
-        return $this->render('unit_admin/show.html.twig', [
+        return $this->render('admin/unit/show.html.twig', [
             'unit' => $unit,
         ]);
     }
@@ -65,7 +65,7 @@ class UnitAdminController extends AbstractController
             return $this->redirectToRoute('unit_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('unit_admin/edit.html.twig', [
+        return $this->renderForm('admin/unit/edit.html.twig', [
             'unit' => $unit,
             'form' => $form,
         ]);

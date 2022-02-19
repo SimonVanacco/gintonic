@@ -19,7 +19,7 @@ class GlassAdminController extends AbstractController {
             ->getRepository(Glass::class)
             ->findAll();
 
-        return $this->render('glass_admin/index.html.twig', [
+        return $this->render('admin/glass/index.html.twig', [
             'glasses' => $glasses,
         ]);
     }
@@ -37,7 +37,7 @@ class GlassAdminController extends AbstractController {
             return $this->redirectToRoute('glass_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('glass_admin/new.html.twig', [
+        return $this->renderForm('admin/glass/new.html.twig', [
             'glass' => $glass,
             'form' => $form,
         ]);
@@ -45,7 +45,7 @@ class GlassAdminController extends AbstractController {
 
     #[Route('/{id}', name: 'glass_admin_show', methods: ['GET'])]
     public function show(Glass $glass): Response {
-        return $this->render('glass_admin/show.html.twig', [
+        return $this->render('admin/glass/show.html.twig', [
             'glass' => $glass,
         ]);
     }
@@ -61,7 +61,7 @@ class GlassAdminController extends AbstractController {
             return $this->redirectToRoute('glass_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('glass_admin/edit.html.twig', [
+        return $this->renderForm('admin/glass/edit.html.twig', [
             'glass' => $glass,
             'form' => $form,
         ]);

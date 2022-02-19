@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block metas %}{% endblock %}
+    <title>{% block title %}GinTonic{% endblock %}</title>
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('index') }}">Gintonic</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbarCollapse" aria-controls="adminNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="adminNavbarCollapse">
+                <ul class="navbar-nav">
+                    {% set route_name = app.request.attributes.get('_route') %}
+                    <li class="nav-item">
+                        <a {% if 'admin_index' == route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('admin_index') }}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a {% if 'cocktail_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('cocktail_admin_index') }}">Cocktails</a>
+                    </li>
+                    <li class="nav-item">
+                        <a {% if 'ingredient_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('ingredient_admin_index') }}">Ingredients</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a {% if 'glass_admin_' in route_name or 'unit_admin_' in route_name %}class="nav-link dropdown-toggle active" aria-current="page"{% else %}class="nav-link dropdown-toggle"{% endif %} href="#" id="plusNavbarDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Plus
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="plusNavbarDropdownLink">
+                            <li><a class="dropdown-item" href="{{ path('glass_admin_index') }}">Glasses</a></li>
+                            <li><a class="dropdown-item" href="{{ path('unit_admin_index') }}">Units</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a class="btn btn-sm btn-primary" title="Logout" href="{{ path('logout') }}"><i class="fas fa-power-off"></i></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}
+</body>
+</html>
+

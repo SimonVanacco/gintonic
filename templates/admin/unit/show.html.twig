@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}Unit{% endblock %}
 
@@ -26,5 +26,5 @@
 
     <a href="{{ path('unit_admin_edit', {'id': unit.id}) }}">edit</a>
 
-    {{ include('unit_admin/_delete_form.html.twig') }}
+    {{ include('admin/unit/_delete_form.html.twig') }}
 {% endblock %}

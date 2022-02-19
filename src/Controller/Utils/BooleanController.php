@@ -11,8 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class BooleanController extends AbstractController {
 
     #[Route('/utils/boolean_toggle', name: 'utils_boolean_toggle', methods: ['PUT'])]
-    public function toggleAction(Request $request, EntityManagerInterface $em) {
-
+    public function toggleAction(Request $request, EntityManagerInterface $em): JsonResponse {
 
         $data = json_decode($request->getContent(), true);
         $raw_payload = $data['payload'];
