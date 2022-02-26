@@ -1,11 +1,11 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}New Cocktail{% endblock %}
+{% block title %}{{ 'New Cocktail'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Create new Cocktail</h1>
+    <h1>{{ 'Add new cocktail'|trans }}</h1>
 
     {{ include('admin/cocktail/_form.html.twig') }}
 
-    <a href="{{ path('cocktail_admin_index') }}">back to list</a>
+    <a href="{{ path('cocktail_admin_index') }}">{{ 'Back to list'|trans }}</a>
 {% endblock %}

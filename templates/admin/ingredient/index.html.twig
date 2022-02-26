@@ -1,18 +1,18 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Ingredient index{% endblock %}
+{% block title %}{{ 'Ingredient list'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Ingredient index</h1>
+    <h1>{{ 'Ingredient list'|trans }}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>In Stock ?</th>
-                <th>In Shopping list ?</th>
-                <th>Actions</th>
+                <th>{{ 'Id'|trans }}</th>
+                <th>{{ 'Name'|trans }}</th>
+                <th>{{ 'In stock ?'|trans }}</th>
+                <th>{{ 'In shopping list ?'|trans }}</th>
+                <th>{{ 'Actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -27,17 +27,17 @@
                     {% include '_partials/_boolean.html.twig' with {'entity': ingredient, 'property': 'isToBuy'} %}
                 </td>
                 <td>
-                    <a href="{{ path('ingredient_admin_show', {'id': ingredient.id}) }}">show</a>
-                    <a href="{{ path('ingredient_admin_edit', {'id': ingredient.id}) }}">edit</a>
+                    <a href="{{ path('ingredient_admin_show', {'id': ingredient.id}) }}">{{ 'Show'|trans }}</a>
+                    <a href="{{ path('ingredient_admin_edit', {'id': ingredient.id}) }}">{{ 'Edit'|trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">No records found</td>
+                <td colspan="5">{{ 'No records found'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('ingredient_admin_new') }}">Create new</a>
+    <a href="{{ path('ingredient_admin_new') }}">{{ 'Create new'|trans }}</a>
 {% endblock %}

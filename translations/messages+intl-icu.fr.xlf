@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="dpAPG.0" resname="Back">
+        <source>Back</source>
+        <target>Retour</target>
+      </trans-unit>
+      <trans-unit id="h2dduDo" resname="Ingredients">
+        <source>Ingredients</source>
+        <target>Ingrédients</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="giurjUG" resname="Quantity">
+        <source>Quantity</source>
+        <target>Quantité</target>
+      </trans-unit>
+      <trans-unit id="pTvK_2f" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Tableau de bord</target>
+      </trans-unit>
+      <trans-unit id="Oj6_4.9" resname="Cocktails">
+        <source>Cocktails</source>
+        <target>Cocktails</target>
+      </trans-unit>
+      <trans-unit id="6yXt4j5" resname="Glasses">
+        <source>Glasses</source>
+        <target>Verres</target>
+      </trans-unit>
+      <trans-unit id="n7Zmmnf" resname="Units">
+        <source>Units</source>
+        <target>Unités</target>
+      </trans-unit>
+      <trans-unit id="xTPK_ra" resname="Featured">
+        <source>Featured</source>
+        <target>Propulsé</target>
+      </trans-unit>
+      <trans-unit id="1H18sOT" resname="More">
+        <source>More</source>
+        <target>Plus</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="Y44kn0o" resname="Filter">
+        <source>Filter</source>
+        <target>Filtrer</target>
+      </trans-unit>
+      <trans-unit id="2u52BrM" resname="Reset">
+        <source>Reset</source>
+        <target>Vider</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="pVJkGpp" resname="Edit Cocktail">
+        <source>Edit Cocktail</source>
+        <target>Modifier le cocktail</target>
+      </trans-unit>
+      <trans-unit id="U0M9PNE" resname="back to list">
+        <source>back to list</source>
+        <target>retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="XqIEDod" resname="Cocktail list">
+        <source>Cocktail list</source>
+        <target>Liste des cocktails</target>
+      </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="MlJci8B" resname="Enabled ?">
+        <source>Enabled ?</source>
+        <target>Activé ?</target>
+      </trans-unit>
+      <trans-unit id="CPzNQ5Y" resname="Featured ?">
+        <source>Featured ?</source>
+        <target>Propulsé ?</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="DfbxytN" resname="Show">
+        <source>Show</source>
+        <target>Afficher</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="bi6mN7M" resname="No records found">
+        <source>No records found</source>
+        <target>Aucun enregistrement trouvé</target>
+      </trans-unit>
+      <trans-unit id="nz33U6Q" resname="Create new">
+        <source>Create new</source>
+        <target>Ajouter</target>
+      </trans-unit>
+      <trans-unit id="REE8PZe" resname="Are you sure you want to delete this item?">
+        <source>Are you sure you want to delete this item?</source>
+        <target>Voulez-vous vraiment supprimer cet item ?</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="Q5EDCD4" resname="New Cocktail">
+        <source>New Cocktail</source>
+        <target>Nouveau Cocktail</target>
+      </trans-unit>
+      <trans-unit id="f1jvXbE" resname="Add new cocktail">
+        <source>Add new cocktail</source>
+        <target>Ajouter un nouveau cocktail</target>
+      </trans-unit>
+      <trans-unit id="Xaj3_8K" resname="Back to list">
+        <source>Back to list</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="lxSvEpt" resname="Edit Ingredient">
+        <source>Edit Ingredient</source>
+        <target>Modifier l'ingrédient</target>
+      </trans-unit>
+      <trans-unit id="RuOq7sL" resname="Ingredient list">
+        <source>Ingredient list</source>
+        <target>Liste des ingrédients</target>
+      </trans-unit>
+      <trans-unit id="RfE9YKj" resname="In stock ?">
+        <source>In stock ?</source>
+        <target>En stock ?</target>
+      </trans-unit>
+      <trans-unit id="esTf5EC" resname="In shopping list ?">
+        <source>In shopping list ?</source>
+        <target>A acheter ?</target>
+      </trans-unit>
+      <trans-unit id="KhG.JIJ" resname="New ingredient">
+        <source>New ingredient</source>
+        <target>Nouvel ingrédient</target>
+      </trans-unit>
+      <trans-unit id="zLQbpxy" resname="Add new ingredient">
+        <source>Add new ingredient</source>
+        <target>Ajouter un nouvel ingrédient</target>
+      </trans-unit>
+      <trans-unit id="S0CTGH6" resname="Edit Unit">
+        <source>Edit Unit</source>
+        <target>Modifier l'unité</target>
+      </trans-unit>
+      <trans-unit id="6feu55v" resname="Unit list">
+        <source>Unit list</source>
+        <target>Liste des unités</target>
+      </trans-unit>
+      <trans-unit id="ZMRFw9G" resname="Singular">
+        <source>Singular</source>
+        <target>Singulier</target>
+      </trans-unit>
+      <trans-unit id="GPtr4zZ" resname="Plural">
+        <source>Plural</source>
+        <target>Pluriel</target>
+      </trans-unit>
+      <trans-unit id="idnqc3b" resname="New unit">
+        <source>New unit</source>
+        <target>Nouvelle unité</target>
+      </trans-unit>
+      <trans-unit id="tQK791n" resname="Add new unit">
+        <source>Add new unit</source>
+        <target>Ajouter une nouvelle unité</target>
+      </trans-unit>
+      <trans-unit id="qDGwnPH" resname="Edit Glass">
+        <source>Edit Glass</source>
+        <target>Modifier l'unité</target>
+      </trans-unit>
+      <trans-unit id="AZPyYmT" resname="Glass list">
+        <source>Glass list</source>
+        <target>Liste des verres</target>
+      </trans-unit>
+      <trans-unit id="o1q81tr" resname="Icon">
+        <source>Icon</source>
+        <target>Icône</target>
+      </trans-unit>
+      <trans-unit id="3LAplNc" resname="New glass">
+        <source>New glass</source>
+        <target>Nouveau verre</target>
+      </trans-unit>
+      <trans-unit id="41Huy_m" resname="Add new glass">
+        <source>Add new glass</source>
+        <target>Ajouter un nouveau verre</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

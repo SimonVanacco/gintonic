@@ -1,11 +1,11 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}New Unit{% endblock %}
+{% block title %}{{ 'New unit'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Create new Unit</h1>
+    <h1>{{ 'Add new unit'|trans }}</h1>
 
     {{ include('admin/unit/_form.html.twig') }}
 
-    <a href="{{ path('unit_admin_index') }}">back to list</a>
+    <a href="{{ path('unit_admin_index') }}">{{ 'Back to list'|trans }}</a>
 {% endblock %}

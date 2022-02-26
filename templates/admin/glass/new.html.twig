@@ -1,11 +1,11 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}New Glass{% endblock %}
+{% block title %}{{ 'New glass'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Create new Glass</h1>
+    <h1>{{ 'Add new glass'|trans }}</h1>
 
     {{ include('admin/glass/_form.html.twig') }}
 
-    <a href="{{ path('glass_admin_index') }}">back to list</a>
+    <a href="{{ path('glass_admin_index') }}">{{ 'Back to list'|trans }}</a>
 {% endblock %}

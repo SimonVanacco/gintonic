@@ -4,6 +4,7 @@ twig:
     globals:
         ingredients_directory: '%ingredients_directory%'
         cocktails_directory: '%cocktails_directory%'
+        app_version: '%env(APP_VERSION)%'
 when@test:
     twig:
         strict_variables: true

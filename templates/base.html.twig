@@ -28,6 +28,15 @@
 
         {% block content %}{% endblock %}
 
+        <footer class="text-center small text-secondary">
+            {% if app.user %}
+                <a href="{{ path('admin_index') }}" class="link-secondary">{{ 'Administration'|trans }}</a>
+            {% else %}
+                <a href="{{ path('login') }}" class="link-secondary">{{ 'Login'|trans }}</a>
+            {% endif %}
+            -
+            {{ 'Powered by GinTonic'|trans }} {{ app_version }}
+        </footer>
     </div>
 {% endblock %}
 </body>

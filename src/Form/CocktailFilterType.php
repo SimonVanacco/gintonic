@@ -40,6 +40,8 @@ class CocktailFilterType extends AbstractType {
                             $qb->expr()->eq('i2.id', 'ci.ingredient'),
                             $qb->expr()->eq('i2.isInStock', '1')
                         ))
+                        ->addOrderBy($filterQuery->getRootAlias() . '.isFeatured', 'DESC')
+                        ->addOrderBy($filterQuery->getRootAlias() . '.name')
                         ->groupBy($filterQuery->getRootAlias() . '.id')
                         ->having('COUNT(i1.id) = COUNT(i2.id)');
                 },

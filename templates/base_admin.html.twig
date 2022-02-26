@@ -26,21 +26,21 @@
                 <ul class="navbar-nav">
                     {% set route_name = app.request.attributes.get('_route') %}
                     <li class="nav-item">
-                        <a {% if 'admin_index' == route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('admin_index') }}">Dashboard</a>
+                        <a {% if 'admin_index' == route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('admin_index') }}">{{ 'Dashboard'|trans }}</a>
                     </li>
                     <li class="nav-item">
-                        <a {% if 'cocktail_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('cocktail_admin_index') }}">Cocktails</a>
+                        <a {% if 'cocktail_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('cocktail_admin_index') }}">{{ 'Cocktails'|trans }}</a>
                     </li>
                     <li class="nav-item">
-                        <a {% if 'ingredient_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('ingredient_admin_index') }}">Ingredients</a>
+                        <a {% if 'ingredient_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('ingredient_admin_index') }}">{{ 'Ingredients'|trans }}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a {% if 'glass_admin_' in route_name or 'unit_admin_' in route_name %}class="nav-link dropdown-toggle active" aria-current="page"{% else %}class="nav-link dropdown-toggle"{% endif %} href="#" id="plusNavbarDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Plus
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="plusNavbarDropdownLink">
-                            <li><a class="dropdown-item" href="{{ path('glass_admin_index') }}">Glasses</a></li>
-                            <li><a class="dropdown-item" href="{{ path('unit_admin_index') }}">Units</a></li>
+                            <li><a class="dropdown-item" href="{{ path('glass_admin_index') }}">{{ 'Glasses'|trans }}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('unit_admin_index') }}">{{ 'Units'|trans }}</a></li>
                         </ul>
                     </li>
                 </ul>

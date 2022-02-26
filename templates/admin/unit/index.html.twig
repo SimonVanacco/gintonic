@@ -1,17 +1,17 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Unit index{% endblock %}
+{% block title %}{{ 'Unit list'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Unit index</h1>
+    <h1>{{ 'Unit list'|trans }}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Singular</th>
-                <th>Plural</th>
-                <th>actions</th>
+                <th>{{ 'Id'|trans }}</th>
+                <th>{{ 'Singular'|trans }}</th>
+                <th>{{ 'Plural'|trans }}</th>
+                <th>{{ 'Actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -21,17 +21,17 @@
                 <td>{{ unit.singular }}</td>
                 <td>{{ unit.plural }}</td>
                 <td>
-                    <a href="{{ path('unit_admin_show', {'id': unit.id}) }}">show</a>
-                    <a href="{{ path('unit_admin_edit', {'id': unit.id}) }}">edit</a>
+                    <a href="{{ path('unit_admin_show', {'id': unit.id}) }}">{{ 'Show'|trans }}</a>
+                    <a href="{{ path('unit_admin_edit', {'id': unit.id}) }}">{{ 'Edit'|trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">{{ 'No records found'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('unit_admin_new') }}">Create new</a>
+    <a href="{{ path('unit_admin_new') }}">{{ 'Create new'|trans }}</a>
 {% endblock %}

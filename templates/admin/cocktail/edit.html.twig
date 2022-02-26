@@ -1,13 +1,13 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Edit Cocktail{% endblock %}
+{% block title %}{{ 'Edit Cocktail'|trans }}{% endblock %}
 
 {% block content %}
-    <h1>Edit Cocktail</h1>
+    <h1>{{ 'Edit Cocktail'|trans }}</h1>
 
     {{ include('admin/cocktail/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('cocktail_admin_index') }}">back to list</a>
+    <a href="{{ path('cocktail_admin_index') }}">{{ 'back to list'|trans }}</a>
 
     {{ include('admin/cocktail/_delete_form.html.twig') }}
 {% endblock %}

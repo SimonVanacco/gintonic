@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home - {{ parent() }}{% endblock %}
+{% block title %}{{ cocktail}} - {{ parent() }}{% endblock %}
 
 {% block content %}
     <div>
         <a href="{{ path('index') }}">
-            Retour
+            <i class="fas fa-arrow-left"></i> {{ 'Back'|trans }}
         </a>
         <h1 class="display-1">{{ cocktail }}</h1>
         <hr>
@@ -26,13 +26,13 @@
                     <p class="mt-5 mb-5">{{ cocktail.description|raw }}</p>
                 {% endif %}
                 {% if cocktail.ingredients %}
-                    <p class="h5 mb-3">Ingredients</p>
+                    <p class="h5 mb-3">{{ 'Ingredients'|trans }}</p>
                     <div class="card card-body bg-dark">
                         <table class="table table-dark table-hover">
                             <thead>
                                 <tr>
-                                    <th>Nom</th>
-                                    <th>Quantité</th>
+                                    <th>{{ 'Name'|trans }}</th>
+                                    <th>{{ 'Quantity'|trans }}</th>
 {#                                    <th></th>#}
                                 </tr>
                             </thead>

@@ -6,7 +6,7 @@
 parameters:
     ingredients_directory: '/uploads/ingredients'
     cocktails_directory: '/uploads/cocktails'
-
+    app_version: '%env(APP_VERSION)%'
 services:
     # default configuration for services in *this* file
     _defaults:
