@@ -35,7 +35,7 @@ class AbstractFileUploader {
 
     public function getFinalTargetDirectory(): string {
 
-        return $this->projectDir . " /public " . $this->targetDirectory;
+        return $this->projectDir . "/public" . $this->targetDirectory;
     }
 
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -21,7 +21,7 @@
         <source>Quantity</source>
         <target>Quantité</target>
       </trans-unit>
-      <trans-unit id="pTvK_2f" resname="Dashboard">
+      <trans-unit id="Z7aWRoY" resname="Dashboard">
         <source>Dashboard</source>
         <target>Tableau de bord</target>
       </trans-unit>
@@ -204,6 +204,22 @@
       <trans-unit id="41Huy_m" resname="Add new glass">
         <source>Add new glass</source>
         <target>Ajouter un nouveau verre</target>
+      </trans-unit>
+      <trans-unit id="gsJoGIz" resname="Glass">
+        <source>Glass</source>
+        <target>Verre</target>
+      </trans-unit>
+      <trans-unit id="R9KlFe8" resname="Loading...">
+        <source>Loading...</source>
+        <target>Chargement...</target>
+      </trans-unit>
+      <trans-unit id="S0LGaQ6" resname="Administration">
+        <source>Administration</source>
+        <target>Administration</target>
+      </trans-unit>
+      <trans-unit id="3qcO2wD" resname="Powered by GinTonic">
+        <source>Powered by GinTonic</source>
+        <target>Propulsé par GinTonic</target>
       </trans-unit>
     </body>
   </file>
