@@ -915,7 +915,7 @@
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.0.1.tgz#141f15645acaa3b133b7c247cad58ae252ffae85"
   integrity sha512-oHsJhgY2cip+K2ED7vKUNd2P+BEswVhrCYcJ802DSsblJFv7mPFVk3cQKvm2vHgHeDVdnj7oOKrBbzp1u8D+KA==
 
-"@hotwired/turbo@^7.0.0-beta.5":
+"@hotwired/turbo@^7.0.1":
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.1.0.tgz#27e44e0e3dc5bd1d4bda0766d579cf5a14091cd7"
   integrity sha512-Q8kGjqwPqER+CtpQudbH+3Zgs2X4zb6pBAlr6NsKTXadg45pAOvxI9i4QpuHbwSzR2+x87HUm+rot9F/Pe8rxA==
@@ -2254,9 +2254,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.4.71:
-  version "1.4.73"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.73.tgz#422f6f514315bcace9615903e4a9b6b9fa283137"
-  integrity sha512-RlCffXkE/LliqfA5m29+dVDPB2r72y2D2egMMfIy3Le8ODrxjuZNVo4NIC2yPL01N4xb4nZQLwzi6Z5tGIGLnA==
+  version "1.4.74"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.74.tgz#f444036a90ffe75f6423b635e77edd4cc9e6cb2f"
+  integrity sha512-DvQ20M0I4dIH8KcAo7n7E4OEeNafZ1N8z6g6ck+ALCM0ZoV6mpjaX6ekjs31zKlqPzacU3lmjG9PZEa1mQhEpQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -2710,6 +2710,11 @@ has@^1.0.3:
   integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   dependencies:
     function-bind "^1.1.1"
+
+hotkeys-js@>=3:
+  version "3.8.7"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.8.7.tgz#c16cab978b53d7242f860ca3932e976b92399981"
+  integrity sha512-ckAx3EkUr5XjDwjEHDorHxRO2Kb7z6Z2Sxul4MbBkN8Nho7XDslQsgMJT+CiJ5Z4TgRxxvKHEpuLE3imzqy4Lg==
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -4376,6 +4381,13 @@ stimulus-autocomplete@^3.0.1:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/stimulus-autocomplete/-/stimulus-autocomplete-3.0.2.tgz#24db95b0990c2272e11ef30ff2cee6ed05878558"
   integrity sha512-8bluCHjz1cgPHu/V0OKhRrGG6V2ordFC+aQwYLJ0U0cRZCq8j10Z6j+DFTsDirFl7NO9iPL1j2z0/CUxeXw2gw==
+
+stimulus-use@^0.41.0:
+  version "0.41.0"
+  resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.41.0.tgz#afe2559281ebe0504b1d35eb0e8e77df9ebd6fb6"
+  integrity sha512-d+XWb5YN2L9I+4zQDtE1sJVy1DBO+1qgNcjV0XpMw7KXPJ8m8JA5lcJk3qgbxV86ePHko0CP9F3dzVsapQwzmA==
+  dependencies:
+    hotkeys-js ">=3"
 
 stimulus@^2.0.0:
   version "2.0.0"

@@ -7,7 +7,7 @@ import 'tinymce/icons/default';
 import 'tinymce/themes/silver';
 
 /* Import the skin */
-import 'tinymce/skins/ui/oxide-dark/skin.css';
+// import 'tinymce/skins/ui/oxide-dark/skin.css';
 
 /* Import plugins */
 import 'tinymce/plugins/advlist';
@@ -18,7 +18,7 @@ import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
 import 'tinymce/plugins/table';
 
-import 'tinymce/skins/ui/oxide-dark/content.css';
-import 'tinymce/skins/content/dark/content.css';
+// import 'tinymce/skins/ui/oxide-dark/content.css';
+// import 'tinymce/skins/content/dark/content.css';
 
 export default tinymce;
