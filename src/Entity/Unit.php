@@ -26,6 +26,10 @@ class Unit {
      */
     private string $plural;
 
+    public function __toString(): string {
+        return $this->singular;
+    }
+
     public function getId(): ?int {
         return $this->id;
     }

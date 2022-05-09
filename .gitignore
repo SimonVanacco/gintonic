@@ -28,3 +28,4 @@ yarn-error.log
 
 .idea
 public/uploads
+bin/db_prod_to_local

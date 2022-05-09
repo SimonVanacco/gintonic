@@ -1,6 +1,8 @@
+{# todo merger avec index #}
 <turbo-frame id="cocktail-ingredients-admin">
     <p class="h5 mb-3">{{ 'Ingredients'|trans }}</p>
     <div class="card card-body bg-dark">
+        {{ form_start(form) }}
         <table class="table table-dark table-hover">
             <thead>
             <tr>
@@ -17,22 +19,14 @@
                 <tr>
                     <td>{{ ingredient }}</td>
                     <td>{{ cocktail_ingredient.formattedQuantity }}</td>
-                    <td>{% include '_partials/_boolean.html.twig' with {'entity': cocktail_ingredient, 'property': 'isOptional'} %}</td>
-                    <td>{% include '_partials/_boolean.html.twig' with {'entity': cocktail_ingredient, 'property': 'isDecoration'} %}</td>
-                    <td>
-                        <a href="{{ path('cocktail_ingredient_admin_edit', {'cocktail': cocktail.id, 'id': cocktail_ingredient.id}) }}"><i class="fas fa-pen"></i></a>
-                        {{ include('admin/cocktail_ingredient/_delete_form.html.twig') }}
-                    </td>
+                    <td>{{ cocktail_ingredient.isOptional }}</td>
+                    <td>{{ cocktail_ingredient.isDecoration }}</td>
+                    <td></td>
                 </tr>
             {% endfor %}
+            {{ include('admin/cocktail_ingredient/_form.html.twig') }}
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="5">
-                        <a href="{{ path('cocktail_ingredient_admin_new', {'cocktail': cocktail.id}) }}">{{ 'Create'|trans }}</a>
-                    </td>
-                </tr>
-            </tfoot>
         </table>
+        {{ form_end(form) }}
     </div>
 </turbo-frame>

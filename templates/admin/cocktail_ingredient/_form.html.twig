@@ -1,0 +1,12 @@
+<tr>
+    <td>{{ form_widget(form.ingredient) }}</td>
+    <td>
+        <div class="row">
+            <div class="col-6">{{ form_widget(form.quantity) }}</div>
+            <div class="col-6">{{ form_widget(form.unit) }}</div>
+        </div>
+    </td>
+    <td>{{ form_widget(form.isOptional) }}</td>
+    <td>{{ form_widget(form.isDecoration) }}</td>
+    <td><button type="submit" class="btn">{{ 'Save'|trans }}</button></td>
+</tr>
