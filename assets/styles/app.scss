@@ -67,3 +67,12 @@ footer {
   display: inline-block;
   cursor: pointer;
 }
+
+
+// Autocomplete
+
+.autocomplete-wrapper {
+  .dropdown-menu {
+    display: inherit;
+  }
+}

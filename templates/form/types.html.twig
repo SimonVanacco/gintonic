@@ -1,0 +1,7 @@
+{% block autocomplete_entity_widget %}
+    <div class="autocomplete-wrapper" data-controller="autocomplete" data-autocomplete-url-value="{{ uri }}" {% if autosubmit %}data-autosubmit="true"{% endif %}>
+        <input type="text" data-autocomplete-target="input" class="form-control" {% if data is not empty %}value="{{ data }}"{% endif %}/>
+        <input type="hidden" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}"{% endif %} data-autocomplete-target="hidden"/>
+        <ul class="dropdown-menu" data-autocomplete-target="results" style="max-height: 10rem; overflow-y: scroll;"></ul>
+    </div>
+{% endblock %}

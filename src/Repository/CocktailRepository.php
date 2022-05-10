@@ -18,4 +18,12 @@ class CocktailRepository extends ServiceEntityRepository {
         parent::__construct($registry, Cocktail::class);
     }
 
+    public function findByAutocomplete(string $q) {
+        $qb = $this->createQueryBuilder('e');
+        $qb
+            ->andWhere($qb->expr()->like('e.name', ':param'))
+            ->setParameter('param', '%' . $q . '%');
+        return $qb->getQuery()->getResult();
+    }
+
 }

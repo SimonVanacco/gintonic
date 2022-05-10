@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Cocktail;
 use App\Entity\Glass;
 use App\Entity\Ingredient;
+use App\Form\Type\AutocompleteEntityType;
 use Doctrine\ORM\Query\Expr\Join;
 use Lexik\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
 use Lexik\Bundle\FormFilterBundle\Filter\Query\QueryInterface;
@@ -17,13 +18,31 @@ class CocktailFilterType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options): void {
         $builder
-            ->add('name', Filters\TextFilterType::class, [
-                'required' => false,
-            ])
-            ->add('ingredients', Filters\EntityFilterType::class, [
-                'class' => Ingredient::class,
+            ->add('cocktail', AutocompleteEntityType::class, [
+                'class' => Cocktail::class,
+                'routeName' => 'app_cocktail_autocomplete',
+                'autosubmit' => true,
                 'mapped' => false,
                 'required' => false,
+                'apply_filter' => function (QueryInterface $filterQuery, $field, $values) {
+                    /** @var \Doctrine\ORM\QueryBuilder $qb */
+                    $qb = $filterQuery->getQueryBuilder();
+                    if ($values['value'] instanceof Cocktail)
+                        $qb->andWhere($filterQuery->getRootAlias() . '.id = ' . $values['value']->getId());
+                },
+            ])
+            ->add('ingredients', AutocompleteEntityType::class, [
+                'class' => Ingredient::class,
+                'routeName' => 'app_ingredient_autocomplete',
+                'autosubmit' => true,
+                'mapped' => false,
+                'required' => false,
+                'apply_filter' => function (QueryInterface $filterQuery, $field, $values) {
+                    /** @var \Doctrine\ORM\QueryBuilder $qb */
+                    $qb = $filterQuery->getQueryBuilder();
+                    if ($values['value'] instanceof Ingredient)
+                        $qb->andWhere('ci.ingredient = ' . $values['value']->getId());
+                },
             ])
             ->add('glass', Filters\EntityFilterType::class, [
                 'class' => Glass::class,
