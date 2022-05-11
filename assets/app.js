@@ -9,10 +9,13 @@ import './bootstrap';
 import WysiwygEditor from "./modules/wysiwygEditor";
 WysiwygEditor.init();
 
-document.querySelectorAll('.autocomplete-wrapper').forEach(el => {
-    el.addEventListener('autocomplete.change', (e) => {
-        if (e.target.dataset.autosubmit && e.target.dataset.autosubmit === 'true') {
-            e.target.closest('form').submit();
-        }
-    })
-});
+// Autosubmit of autocomplete
+document.addEventListener("turbo:load", function() {
+    document.querySelectorAll('.autocomplete-wrapper').forEach(el => {
+        el.addEventListener('autocomplete.change', (e) => {
+            if (e.target.dataset.autosubmit && e.target.dataset.autosubmit === 'true') {
+                e.target.closest('form').submit();
+            }
+        })
+    });
+})
