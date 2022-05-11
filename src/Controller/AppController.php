@@ -30,7 +30,7 @@ class AppController extends AbstractController {
 
         if ($request->get('reset-filter') !== null) {
             $session->set('index_filter', '{}');
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('index', [], 303);
         }
 
         if ($request->get('cocktail_filter') !== null) {
@@ -38,7 +38,7 @@ class AppController extends AbstractController {
             if ($form->isSubmitted() && $form->isValid()) {
                 $data = json_encode($request->request->all());
                 $session->set('index_filter', $data);
-                return $this->redirectToRoute('index');
+                return $this->redirectToRoute('index', [], 303);
             }
         } else {
             $filterData = json_decode($session->get('index_filter', '{}'), true);

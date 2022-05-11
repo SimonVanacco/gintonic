@@ -47,6 +47,7 @@ class CocktailFilterType extends AbstractType {
             ->add('glass', Filters\EntityFilterType::class, [
                 'class' => Glass::class,
                 'required' => false,
+                'attr' => ['data-autosubmit' => 'true']
             ])
             ->add('fake', HiddenType::class, [
                 'mapped' => false,
