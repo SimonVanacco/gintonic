@@ -23,6 +23,7 @@ $dark: darken($body-bg, 1.3);
 @import "../../node_modules/bootstrap/scss/helpers";
 
 @import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/button-group";
 @import "../../node_modules/bootstrap/scss/tables";
 @import "../../node_modules/bootstrap/scss/forms";
 @import "../../node_modules/bootstrap/scss/card";
@@ -55,6 +56,17 @@ footer {
   width: 100%;
   height: 288px;
   object-fit: cover;
+}
+
+.list-layout-card {
+  height: 120px;
+}
+
+.list-layout-card .img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 .featured {

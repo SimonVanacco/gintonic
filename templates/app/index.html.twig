@@ -24,9 +24,15 @@
         </div>
         {{ form_end(form) }}
     </div>
-    <div class="row mt-4 row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+    <div class="mt-4 d-block d-md-none">
         {% for cocktail in cocktails %}
             {% include 'app/cocktail/_cocktail_list_item.html.twig' %}
+        {% endfor %}
+    </div>
+    <div class="row mt-4 row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 d-none d-md-flex">
+        {% for cocktail in cocktails %}
+            {% include 'app/cocktail/_cocktail_card_item.html.twig' %}
         {% endfor %}
     </div>
 {% endblock %}

@@ -1,0 +1,24 @@
+<div class="col">
+    <div class="card text-white bg-dark mb-3 position-relative">
+        {% if cocktail.isFeatured %}
+            <span class="featured badge bg-primary">{{ 'Featured'|trans }} <i class="fas fa-rocket"></i></span>
+        {% endif %}
+        <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="card-link">
+            {% if cocktail.photo %}
+                <img src="{{ asset(cocktails_directory ~ "/" ~ cocktail.photo) }}" class="card-img-top" alt="{{ cocktail.name }}">
+            {% else %}
+                <img src="{{ asset('images/missing-cocktail.jpg') }}" class="card-img-top" alt="{{ cocktail.name }}">
+            {% endif %}
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">{{ cocktail.name }}</h5>
+            {# {% if cocktail.category %}<h6 class="card-subtitle mb-2 text-muted">{{ cocktail.category }}</h6>{% endif %} #}
+            {# <p class="card-text"> #}
+            {# Some quick example text to build on the card title and make up the bulk of the card's #}
+            {# content. #}
+            {# </p> #}
+            <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm float-end">{{ 'More'|trans }} <i class="fas fa-arrow-right"></i></a>
+            {# <a href="#" class="card-link">Order</a> #}
+        </div>
+    </div>
+</div>
