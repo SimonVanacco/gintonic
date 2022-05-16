@@ -1,16 +1,18 @@
 <div class="card list-layout-card text-white bg-dark mb-2">
     <div class="row g-0 h-100">
         <div class="col-4">
-            <div class="img rounded-start" style="background-image: url({{ asset(cocktails_directory ~ "/" ~ cocktail.photo) }})"></div>
+            <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}">
+                {% if cocktail.photo %}
+                    <div class="img rounded-start" style="background-image: url({{ asset(cocktails_directory ~ "/" ~ cocktail.photo) }})"></div>
+                {% else %}
+                    <div class="img rounded-start" style="background-image: url({{ asset('images/missing-cocktail.jpg') }})"></div>
+                {% endif %}
+            </a>
+            {# Todo featured functionnality on mobile #}
             {#                {% if cocktail.isFeatured %} #}
             {#                    <span class="featured badge bg-primary">{{ 'Featured'|trans }} <i class="fas fa-rocket"></i></span> #}
             {#                {% endif %} #}
             {#                <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="card-link"> #}
-            {#                    {% if cocktail.photo %} #}
-            {#                        <img src="{{ asset(cocktails_directory ~ "/" ~ cocktail.photo) }}" class="img-fluid rounded-start" alt="{{ cocktail.name }}"> #}
-            {#                    {% else %} #}
-            {#                        <img src="{{ asset('images/missing-cocktail.jpg') }}" class="img-fluid rounded-start" alt="{{ cocktail.name }}"> #}
-            {#                    {% endif %} #}
             {#                </a> #}
         </div>
         <div class="col-8">
@@ -21,7 +23,7 @@
                 {# Some quick example text to build on the card title and make up the bulk of the card's #}
                 {# content. #}
                 {# </p> #}
-                <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm float-end">{{ 'More'|trans }}
+                <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm float-end mt-4">{{ 'More'|trans }}
                     <i class="fas fa-arrow-right"></i></a>
                 {# <a href="#" class="card-link">Order</a> #}
             </div>
