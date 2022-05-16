@@ -1,0 +1,20 @@
+{# Todo : make it possible to remove items from widget #}
+<turbo-frame id="admin-widget-shopping">
+    <div class="card text-white bg-dark widget-flat">
+        <div class="card-body">
+            <div class="float-end">
+                <i class="fas fa-shopping-cart widget-icon"></i>
+            </div>
+            <h5 class="text-muted fw-normal mt-0">{{ 'Shopping list' | trans }}</h5>
+            {% if ingredients %}
+                <ul class="mt-4">
+                    {% for ingredient in ingredients %}
+                        <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <span class="text-nowrap">{{ 'Nothing to buy !' | trans }}</span>
+            {% endif %}
+        </div>
+    </div>
+</turbo-frame>

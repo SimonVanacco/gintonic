@@ -15,6 +15,13 @@
             <label for="password" class="form-label mt-4">{{ 'Password'|trans }}:</label>
             <input type="password" id="password" name="_password" class="form-control"/>
 
+            <div class="form-check mt-4">
+                <input class="form-check-input" type="checkbox" name="_remember_me" id="rememberMeCheck" checked>
+                <label class="form-check-label" for="flexCheckDefault">
+                    {{ 'Stay logged-in'|trans }}
+                </label>
+            </div>
+
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
             <button type="submit" class="btn btn-primary mt-4">{{ 'Login'|trans }}</button>
         </form>

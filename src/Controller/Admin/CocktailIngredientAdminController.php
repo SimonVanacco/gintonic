@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Cocktail;
 use App\Entity\CocktailIngredient;
+use App\Entity\Unit;
 use App\Form\CocktailIngredientType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,7 +25,11 @@ class CocktailIngredientAdminController extends AbstractController {
 
     #[Route('/{cocktail}/ingredient/new', name: 'cocktail_ingredient_admin_new', methods: ['GET', 'POST'])]
     public function new(Request $request, Cocktail $cocktail, EntityManagerInterface $entityManager): Response {
-        $form = $this->createForm(CocktailIngredientType::class, null, [
+
+        $default = new CocktailIngredient();
+        $default->setUnit($entityManager->find(Unit::class, Unit::DEFAULT));
+
+        $form = $this->createForm(CocktailIngredientType::class, $default, [
             'action' => $this->generateUrl('cocktail_ingredient_admin_new', ['cocktail' => $cocktail->getId()])
         ]);
         $form->handleRequest($request);

@@ -1,0 +1,15 @@
+<turbo-frame id="{{ app.request.attributes.get('_route')|replace({'_': '-'}) }}">
+     <div class="card text-white bg-dark widget-flat">
+        <div class="card-body">
+            <div class="float-end">
+                <i class="{{ icon }} widget-icon"></i>
+            </div>
+            <h5 class="text-muted fw-normal mt-0">{{ label }}</h5>
+            <h3 class="mt-3 mb-3">{{ count }}</h3>
+{#            <p class="mb-0 text-muted"> #}
+{#                <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 7.00%</span> #}
+{#                <span class="text-nowrap">Since last month</span> #}
+{#            </p> #}
+        </div>
+     </div>
+</turbo-frame>

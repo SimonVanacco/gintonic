@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Cocktail;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -24,6 +25,20 @@ class CocktailRepository extends ServiceEntityRepository {
             ->andWhere($qb->expr()->like('e.name', ':param'))
             ->setParameter('param', '%' . $q . '%');
         return $qb->getQuery()->getResult();
+    }
+
+    public function countAllAvailable(): int {
+        $qb = $this->createQueryBuilder('e');
+        $qb->select('COUNT(e.id)')
+            ->leftJoin('e.ingredients', 'ci')
+            ->leftJoin('ci.ingredient', 'i1')
+            ->leftJoin('ci.ingredient', 'i2', Join::WITH, $qb->expr()->andX(
+                $qb->expr()->eq('i2.id', 'ci.ingredient'),
+                $qb->expr()->eq('i2.isInStock', '1')
+            ))
+            ->groupBy('e.id')
+            ->having('COUNT(i1.id) = COUNT(i2.id)');
+        return count($qb->getQuery()->getResult());
     }
 
 }

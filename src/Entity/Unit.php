@@ -9,6 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Unit {
 
+    public const DEFAULT = 1;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

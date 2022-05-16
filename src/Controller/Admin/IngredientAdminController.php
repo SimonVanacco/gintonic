@@ -88,4 +88,5 @@ class IngredientAdminController extends AbstractController {
 
         return $this->redirectToRoute('ingredient_admin_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

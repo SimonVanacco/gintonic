@@ -17,10 +17,10 @@ class CocktailIngredientType extends AbstractType {
                 'class' => Ingredient::class,
                 'routeName' => 'app_ingredient_autocomplete',
             ])
-            ->add('quantity', null)
-            ->add('unit', null)
-            ->add('isDecoration', null)
-            ->add('isOptional', null)
+            ->add('quantity')
+            ->add('unit')
+            ->add('isDecoration')
+            ->add('isOptional')
         ;
     }
 

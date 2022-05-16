@@ -4,6 +4,38 @@
 
 {% block content %}
 
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <turbo-frame id="admin-widget-cocktails" src="{{ path('admin_widget_cocktails') }}">
+                        {% include 'admin/widgets/_loading.html.twig' %}
+                    </turbo-frame>
+                </div>
+                <div class="col-md-6">
+                    <turbo-frame id="admin-widget-cocktails-available" src="{{ path('admin_widget_cocktails_available') }}">
+                        {% include 'admin/widgets/_loading.html.twig' %}
+                    </turbo-frame>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <turbo-frame id="admin-widget-ingredients" src="{{ path('admin_widget_ingredients') }}">
+                        {% include 'admin/widgets/_loading.html.twig' %}
+                    </turbo-frame>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <turbo-frame id="admin-widget-ingredients-available" src="{{ path('admin_widget_ingredients_available') }}">
+                        {% include 'admin/widgets/_loading.html.twig' %}
+                    </turbo-frame>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <turbo-frame id="admin-widget-shopping" src="{{ path('admin_widget_shopping') }}">
+                {% include 'admin/widgets/_loading.html.twig' %}
+            </turbo-frame>
+        </div>
+    </div>
+
     {# TODO : Count cocktails, Count cocktails dispo, Count ingredients, Count in stock, Liste de course  #}
 
 {% endblock %}
