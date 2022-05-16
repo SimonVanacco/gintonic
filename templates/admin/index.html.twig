@@ -8,6 +8,16 @@
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-6 mt-3">
+                    <turbo-frame id="admin-widget-orders" src="{{ path('admin_widget_orders') }}">
+                        {% include 'admin/widgets/_loading.html.twig' %}
+                    </turbo-frame>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <turbo-frame id="admin-widget-orders-today" src="{{ path('admin_widget_orders_today') }}">
+                        {% include 'admin/widgets/_loading.html.twig' %}
+                    </turbo-frame>
+                </div>
+                <div class="col-md-6 mt-3">
                     <turbo-frame id="admin-widget-cocktails" src="{{ path('admin_widget_cocktails') }}">
                         {% include 'admin/widgets/_loading.html.twig' %}
                     </turbo-frame>

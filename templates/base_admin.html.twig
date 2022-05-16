@@ -29,6 +29,9 @@
                         <a {% if 'admin_index' == route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('admin_index') }}">{{ 'Dashboard'|trans }}</a>
                     </li>
                     <li class="nav-item">
+                        <a {% if 'order_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('order_admin_index') }}">{{ 'Orders'|trans }}</a>
+                    </li>
+                    <li class="nav-item">
                         <a {% if 'cocktail_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('cocktail_admin_index') }}">{{ 'Cocktails'|trans }}</a>
                     </li>
                     <li class="nav-item">

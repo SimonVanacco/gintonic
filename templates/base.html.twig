@@ -38,6 +38,18 @@
             {{ 'Powered by GinTonic'|trans }} {{ app_version }}
         </footer>
     </div>
+    {% block flashes %}
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            {% for label, messages in app.flashes(['success', 'warning', 'error']) %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                        <strong>{{ message[0] }}</strong> {{ message[1] }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% endblock %}
 {% endblock %}
 </body>
 </html>

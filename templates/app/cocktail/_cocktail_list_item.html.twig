@@ -23,9 +23,14 @@
                 {# Some quick example text to build on the card title and make up the bulk of the card's #}
                 {# content. #}
                 {# </p> #}
-                <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm float-end mt-4">{{ 'More'|trans }}
-                    <i class="fas fa-arrow-right"></i></a>
-                {# <a href="#" class="card-link">Order</a> #}
+                <div class="float-end pt-4">
+                    <a href="{{ path('app_cocktail_order', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm">
+                        <i class="fa-solid fa-basket-shopping"></i> {{ 'Order'|trans }}
+                    </a>
+                    <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm">{{ 'More'|trans }}
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

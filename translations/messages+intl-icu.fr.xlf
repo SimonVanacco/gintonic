@@ -221,6 +221,79 @@
         <source>Powered by GinTonic</source>
         <target>Propulsé par GinTonic</target>
       </trans-unit>
+      <trans-unit id="t_is3VI" resname="Orders">
+        <source>Orders</source>
+        <target>Commandes</target>
+      </trans-unit>
+      <trans-unit id="K99zARN" resname="Orders today">
+        <source>Orders today</source>
+        <target>Commandes aujourd'hui</target>
+      </trans-unit>
+      <trans-unit id="wusQlBb" resname="Available cocktails">
+        <source>Available cocktails</source>
+        <target>Cocktails disponibles</target>
+      </trans-unit>
+      <trans-unit id="yQxR7vy" resname="Available ingredients">
+        <source>Available ingredients</source>
+        <target>Ingrédients en stock</target>
+      </trans-unit>
+      <trans-unit id="Wb5xMzy" resname="Optional">
+        <source>Optional</source>
+        <target>Optionnel</target>
+      </trans-unit>
+      <trans-unit id="ezmp.Qf" resname="Decoration">
+        <source>Decoration</source>
+        <target>Décoration</target>
+      </trans-unit>
+      <trans-unit id="PTydFBx" resname="Shopping list">
+        <source>Shopping list</source>
+        <target>Liste de courses</target>
+      </trans-unit>
+      <trans-unit id="SrJyLBm" resname="Nothing to buy !">
+        <source>Nothing to buy !</source>
+        <target>Rien à acheter !</target>
+      </trans-unit>
+      <trans-unit id="3DgIiMT" resname="Loading">
+        <source>Loading</source>
+        <target>Chargement</target>
+      </trans-unit>
+      <trans-unit id="mcQKtAW" resname="Date">
+        <source>Date</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="_456Gjy" resname="Items">
+        <source>Items</source>
+        <target>Items</target>
+      </trans-unit>
+      <trans-unit id="ZM.xMZ0" resname="Action">
+        <source>Action</source>
+        <target>Action</target>
+      </trans-unit>
+      <trans-unit id="a_CQgly" resname="Order">
+        <source>Order</source>
+        <target>Commander</target>
+      </trans-unit>
+      <trans-unit id="72NpccQ" resname="Order this cocktail">
+        <source>Order this cocktail</source>
+        <target>Commander ce cocktail</target>
+      </trans-unit>
+      <trans-unit id="jx2diTA" resname="Order now !">
+        <source>Order now !</source>
+        <target>Commander maintenant !</target>
+      </trans-unit>
+      <trans-unit id="q1Ov._E" resname="Your order has been received !">
+        <source>Your order has been received !</source>
+        <target>Votre commande a bien été reçue !</target>
+      </trans-unit>
+      <trans-unit id="SRTNBTa" resname="Stay logged-in">
+        <source>Stay logged-in</source>
+        <target>Rester connecter</target>
+      </trans-unit>
+    <trans-unit id="Your name" resname="Your name">
+    <source>Your name</source>
+    <target>Votre nom</target>
+    </trans-unit>
     </body>
+
   </file>
 </xliff>

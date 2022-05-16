@@ -7,10 +7,13 @@
         <a href="{{ path('index') }}" class="btn btn-outline-secondary btn-sm">
             <i class="fas fa-arrow-left"></i> {{ 'Back'|trans }}
         </a>
+        <a href="{{ path('app_cocktail_order', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm">
+            <i class="fa-solid fa-basket-shopping"></i> {{ 'Order'|trans }}
+        </a>
         <h1 class="display-1">{{ cocktail }}</h1>
         <hr>
         <div class="row">
-            <div class="col-12 col-md-5 col-lg-4">
+            <div class="col-12 col-md-5 col-lg-4 mb-3">
                 {% if cocktail.photo %}
                     <img src="{{ asset(cocktails_directory ~ "/" ~ cocktail.photo) }}" class="img-fluid rounded" alt="{{ cocktail.name }}">
                 {% else %}
@@ -52,6 +55,9 @@
                         </table>
                     </div>
                 {% endif %}
+                <a href="{{ path('app_cocktail_order', {'id': cocktail.id}) }}" class="btn btn-outline-primary w-100 mt-4">
+                    <i class="fa-solid fa-basket-shopping"></i> {{ 'Order this cocktail'|trans }}
+                </a>
             </div>
         </div>
     </div>

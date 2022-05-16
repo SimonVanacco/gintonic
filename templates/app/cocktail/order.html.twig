@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ cocktail }} - {{ parent() }}{% endblock %}
+
+{% block content %}
+    <div>
+        <a href="{{ path('index') }}" class="btn btn-outline-secondary btn-sm">
+            <i class="fas fa-arrow-left"></i> {{ 'Back'|trans }}
+        </a>
+        <h1 class="display-1">{{ cocktail }}</h1>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-md-5 col-lg-4 mb-3">
+                {% if cocktail.photo %}
+                    <img src="{{ asset(cocktails_directory ~ "/" ~ cocktail.photo) }}" class="img-fluid rounded" alt="{{ cocktail.name }}">
+                {% else %}
+                    <img src="{{ asset('images/missing-cocktail.jpg') }}" class="img-fluid rounded" alt="{{ cocktail.name }}">
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-7 col-lg-8">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                    <button class="btn btn-primary">{{ button_label|default('Order now !'|trans) }}</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
