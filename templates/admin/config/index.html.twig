@@ -1,0 +1,16 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}{{ 'Edit Configuration'|trans }}{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Edit Configuration'|trans }}</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save'|trans) }}</button>
+    {{ form_end(form) }}
+
+{% endblock %}
+
+
+

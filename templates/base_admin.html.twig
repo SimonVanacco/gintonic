@@ -37,6 +37,9 @@
                     <li class="nav-item">
                         <a {% if 'ingredient_admin_' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('ingredient_admin_index') }}">{{ 'Ingredients'|trans }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a {% if 'admin_config' in route_name %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %} href="{{ path('admin_config_index') }}">{{ 'Config'|trans }}</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a {% if 'glass_admin_' in route_name or 'unit_admin_' in route_name %}class="nav-link dropdown-toggle active" aria-current="page"{% else %}class="nav-link dropdown-toggle"{% endif %} href="#" id="plusNavbarDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Plus

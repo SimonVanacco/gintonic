@@ -14,9 +14,9 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 #[Route('/admin')]
 class AdminController extends AbstractController {
 
-    private TranslatorInterface $translator;
-    public function __construct(TranslatorInterface $translator) {
-        $this->translator = $translator;
+    public function __construct(
+        private TranslatorInterface $translator
+    ) {
     }
 
     #[Route('/', name: 'admin_index', methods: ['GET'])]
