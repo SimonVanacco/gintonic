@@ -1,0 +1,52 @@
+{# TODO TRANSLATIONS #}
+{% apply inky_to_html|inline_css(source('@styles/foundation-emails.css')) %}
+    <spacer size="16"></spacer>
+
+    <container>
+
+        <spacer size="16"></spacer>
+
+        <row>
+            <columns>
+                <h1>New order just in !</h1>
+
+                <spacer size="16"></spacer>
+
+                <callout class="secondary">
+                    <row>
+                        <columns large="12">
+                            <p>
+                                <strong>Name</strong><br/>
+                                {{ order.name }}
+                            </p>
+                            <p>
+                                <strong>Ordered at</strong><br/>
+                                {{ order.createdAt | format_datetime() }}
+                            </p>
+                            <p>
+                                <strong>Order ID</strong><br/>
+                                <a href="{{ absolute_url(path('order_admin_show', {'id' : order.id})) }}">{{ order.id }}</a>
+                            </p>
+                        </columns>
+                    </row>
+                </callout>
+
+                <h4>Order Details</h4>
+
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>#</th>
+                    </tr>
+                    {% for item in order.items %}
+                    <tr>
+                        <td>{{ item.cocktail }}</td>
+                        <td>1</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <hr/>
+            </columns>
+        </row>
+    </container>
+{% endapply %}

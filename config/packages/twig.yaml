@@ -7,6 +7,8 @@ twig:
         ingredients_directory: '%ingredients_directory%'
         cocktails_directory: '%cocktails_directory%'
         app_version: '%env(APP_VERSION)%'
+    paths:
+        '%kernel.project_dir%/assets/styles': styles
 when@test:
     twig:
         strict_variables: true

@@ -91,6 +91,12 @@
     "lexik/form-filter-bundle": {
         "version": "v7.0.2"
     },
+    "lorenzo/pinky": {
+        "version": "1.0.6"
+    },
+    "masterminds/html5": {
+        "version": "2.7.5"
+    },
     "monolog/monolog": {
         "version": "2.3.5"
     },
@@ -469,9 +475,6 @@
     "symfony/polyfill-php80": {
         "version": "v1.24.0"
     },
-    "symfony/polyfill-php81": {
-        "version": "v1.24.0"
-    },
     "symfony/process": {
         "version": "v5.4.2"
     },
@@ -644,8 +647,17 @@
     "theseer/tokenizer": {
         "version": "1.2.1"
     },
+    "tijsverkoyen/css-to-inline-styles": {
+        "version": "2.2.4"
+    },
+    "twig/cssinliner-extra": {
+        "version": "v3.4.0"
+    },
     "twig/extra-bundle": {
         "version": "v3.3.7"
+    },
+    "twig/inky-extra": {
+        "version": "v3.4.0"
     },
     "twig/intl-extra": {
         "version": "v3.4.0"

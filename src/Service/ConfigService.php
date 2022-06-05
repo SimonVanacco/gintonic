@@ -26,6 +26,11 @@ class ConfigService {
         });
     }
 
+    public function getConfigItem(string $key): ?string {
+        $config = $this->getConfig();
+        return array_key_exists($key, $config) ? $config[$key] : null;
+    }
+
     public function setConfigKey(string $key, string $value): ConfigItem {
         $configItem = $this->repository->findOneByConfigKey($key);
         if (!$configItem) {
