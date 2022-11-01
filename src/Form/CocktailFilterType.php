@@ -4,8 +4,8 @@ namespace App\Form;
 
 use App\Entity\Cocktail;
 use App\Entity\Glass;
-use App\Entity\Ingredient;
-use App\Form\Type\AutocompleteEntityType;
+use App\Form\Type\CocktailAutocompleteType;
+use App\Form\Type\IngredientsAutocompleteType;
 use Doctrine\ORM\Query\Expr\Join;
 use Lexik\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
 use Lexik\Bundle\FormFilterBundle\Filter\Query\QueryInterface;
@@ -18,12 +18,10 @@ class CocktailFilterType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options): void {
         $builder
-            ->add('cocktail', AutocompleteEntityType::class, [
-                'class' => Cocktail::class,
-                'routeName' => 'app_cocktail_autocomplete',
-                'autosubmit' => true,
+            ->add('cocktail', CocktailAutocompleteType::class, [
                 'mapped' => false,
                 'required' => false,
+                'attr' => ['data-autosubmit' => 'true'],
                 'apply_filter' => function (QueryInterface $filterQuery, $field, $values) {
                     /** @var \Doctrine\ORM\QueryBuilder $qb */
                     $qb = $filterQuery->getQueryBuilder();
@@ -31,23 +29,25 @@ class CocktailFilterType extends AbstractType {
                         $qb->andWhere($filterQuery->getRootAlias() . '.id = ' . $values['value']->getId());
                 },
             ])
-            ->add('ingredients', AutocompleteEntityType::class, [
-                'class' => Ingredient::class,
-                'routeName' => 'app_ingredient_autocomplete',
-                'autosubmit' => true,
+            ->add('ingredients', IngredientsAutocompleteType::class, [
                 'mapped' => false,
                 'required' => false,
+                'attr' => ['data-autosubmit' => 'true'],
                 'apply_filter' => function (QueryInterface $filterQuery, $field, $values) {
                     /** @var \Doctrine\ORM\QueryBuilder $qb */
                     $qb = $filterQuery->getQueryBuilder();
-                    if ($values['value'] instanceof Ingredient)
-                        $qb->andWhere('ci.ingredient = ' . $values['value']->getId());
+                    if (!$values['value']) {
+                        return;
+                    }
+                    foreach ($values['value'] as $val) {
+                        $qb->andWhere('ci.ingredient = ' . $val->getId());
+                    }
                 },
             ])
             ->add('glass', Filters\EntityFilterType::class, [
                 'class' => Glass::class,
                 'required' => false,
-                'attr' => ['data-autosubmit' => 'true']
+                'attr' => ['data-autosubmit' => 'true'],
             ])
             ->add('fake', HiddenType::class, [
                 'mapped' => false,
