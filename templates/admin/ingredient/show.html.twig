@@ -34,9 +34,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('ingredient_admin_index') }}">{{ 'back to list'|trans }}</a>
-
-    <a href="{{ path('ingredient_admin_edit', {'id': ingredient.id}) }}">edit</a>
-
+    <a class="btn btn-outline-secondary" href="{{ path('ingredient_admin_index') }}">{{ 'Back to list'|trans }}</a>
+    <a class="btn btn-outline-secondary" href="{{ path('ingredient_admin_edit', {'id': ingredient.id}) }}">{{ 'Edit'|trans }}</a>
     {{ include('admin/ingredient/_delete_form.html.twig') }}
 {% endblock %}

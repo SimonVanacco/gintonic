@@ -51,6 +51,10 @@ class CocktailController extends AbstractController {
 
         $session = $request->getSession();
 
+        if (!$configService->getConfigItem('ordersOpen')) {
+            return $this->redirectToRoute('index');
+        }
+
         $order = new Order();
         $order->setName($session->get('order_name', ''));
 

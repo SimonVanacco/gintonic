@@ -20,7 +20,7 @@
                     <td>{% include '_partials/_boolean.html.twig' with {'entity': cocktail_ingredient, 'property': 'isOptional'} %}</td>
                     <td>{% include '_partials/_boolean.html.twig' with {'entity': cocktail_ingredient, 'property': 'isDecoration'} %}</td>
                     <td>
-                        <a href="{{ path('cocktail_ingredient_admin_edit', {'cocktail': cocktail.id, 'id': cocktail_ingredient.id}) }}"><i class="fas fa-pen"></i></a>
+                        <a class="btn btn-link" href="{{ path('cocktail_ingredient_admin_edit', {'cocktail': cocktail.id, 'id': cocktail_ingredient.id}) }}"><i class="fas fa-pen"></i></a>
                         {{ include('admin/cocktail_ingredient/_delete_form.html.twig') }}
                     </td>
                 </tr>

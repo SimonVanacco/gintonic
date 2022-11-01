@@ -5,11 +5,7 @@
 {% block content %}
     <h1>{{ 'Edit Cocktail'|trans }}</h1>
 
-    {{ include('admin/cocktail/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('cocktail_admin_index') }}">{{ 'back to list'|trans }}</a>
-
-    {{ include('admin/cocktail/_delete_form.html.twig') }}
+    {{ include('admin/cocktail/_form.html.twig') }}
 
     <turbo-frame id="cocktail-ingredients-admin" src="{{ path('cocktail_ingredient_admin_index', {'cocktail' : cocktail.id}) }}">
         {{ 'Loading...'|trans }}

@@ -4,8 +4,5 @@
 
 {% block content %}
     <h1>{{ 'Add new ingredient'|trans }}</h1>
-
     {{ include('admin/ingredient/_form.html.twig') }}
-
-    <a href="{{ path('ingredient_admin_index') }}">{{ 'Back to list'|trans }}</a>
 {% endblock %}

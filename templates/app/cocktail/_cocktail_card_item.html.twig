@@ -18,9 +18,11 @@
             {# content. #}
             {# </p> #}
             <div class="float-end">
-                <a href="{{ path('app_cocktail_order', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm">
-                    <i class="fa-solid fa-basket-shopping"></i> {{ 'Order'|trans }}
-                </a>
+                {% if appConfig.getConfigItem('ordersOpen') %}
+                    <a href="{{ path('app_cocktail_order', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm">
+                        <i class="fa-solid fa-basket-shopping"></i> {{ 'Order'|trans }}
+                    </a>
+                {% endif %}
                 <a href="{{ path('app_cocktail_show', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm">
                     {{ 'More'|trans }} <i class="fas fa-arrow-right"></i>
                 </a>

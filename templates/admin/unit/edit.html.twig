@@ -4,10 +4,5 @@
 
 {% block content %}
     <h1>{{ 'Edit Unit'|trans }}</h1>
-
-    {{ include('admin/unit/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('unit_admin_index') }}">{{ 'back to list'|trans }}</a>
-
-    {{ include('admin/unit/_delete_form.html.twig') }}
+    {{ include('admin/unit/_form.html.twig') }}
 {% endblock %}

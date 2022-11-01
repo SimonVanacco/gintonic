@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{ cocktail.description }}</td>
+                <td>{{ cocktail.description | raw }}</td>
             </tr>
             <tr>
                 <th>Recipe</th>
@@ -38,9 +38,8 @@
         </tbody>
     </table>
 
-    <a href="{{ path('cocktail_admin_index') }}">back to list</a>
-
-    <a href="{{ path('cocktail_admin_edit', {'id': cocktail.id}) }}">edit</a>
+    <a href="{{ path('cocktail_admin_index') }}" class="btn btn-outline-secondary">Back to list</a>
+    <a href="{{ path('cocktail_admin_edit', {'id': cocktail.id}) }}" class="btn btn-outline-secondary">Edit</a>
 
     {{ include('admin/cocktail/_delete_form.html.twig') }}
 {% endblock %}

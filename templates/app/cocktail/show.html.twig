@@ -7,9 +7,11 @@
         <a href="{{ path('index') }}" class="btn btn-outline-secondary btn-sm">
             <i class="fas fa-arrow-left"></i> {{ 'Back'|trans }}
         </a>
+        {% if appConfig.getConfigItem('ordersOpen') %}
         <a href="{{ path('app_cocktail_order', {'id': cocktail.id}) }}" class="btn btn-outline-primary btn-sm">
             <i class="fa-solid fa-basket-shopping"></i> {{ 'Order'|trans }}
         </a>
+        {% endif %}
         <h1 class="display-1">{{ cocktail }}</h1>
         <hr>
         <div class="row">
@@ -55,9 +57,11 @@
                         </table>
                     </div>
                 {% endif %}
+                {% if appConfig.getConfigItem('ordersOpen') %}
                 <a href="{{ path('app_cocktail_order', {'id': cocktail.id}) }}" class="btn btn-outline-primary w-100 mt-4">
                     <i class="fa-solid fa-basket-shopping"></i> {{ 'Order this cocktail'|trans }}
                 </a>
+                {% endif %}
             </div>
         </div>
     </div>
