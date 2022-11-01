@@ -1,6 +1,15 @@
 {
+    "name": "simonvanacco/gintonic",
+    "description": "A great home bar manager",
+    "version": "1.0.0",
     "type": "project",
-    "license": "proprietary",
+    "license": "AGPL-3.0-only",
+    "authors": [
+        {
+            "name": "Simon Van Accoleyen",
+            "hompage": "https://vanacco.fr"
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
