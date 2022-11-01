@@ -3,7 +3,7 @@
     {{ form_widget(form) }}
     <button class="btn btn-outline-primary">{{ 'Save'|trans }}</button>
     <a class="btn btn-outline-secondary" href="{{ path('cocktail_admin_index') }}">{{ 'Back to list'|trans }}</a>
-    {% if cocktail is defined %}
+    {% if cocktail is defined and cocktail.id %}
         {{ include('admin/cocktail/_delete_form.html.twig') }}
     {% endif %}
     {{ form_end(form) }}

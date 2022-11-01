@@ -2,7 +2,7 @@
     {{ form_widget(form) }}
     <button class="btn btn-outline-primary">{{ 'Save'|trans }}</button>
     <a class="btn btn-outline-secondary" href="{{ path('glass_admin_index') }}">{{ 'Back to list'|trans }}</a>
-    {% if glass is defined %}
+    {% if glass is defined and glass.id %}
         {{ include('admin/glass/_delete_form.html.twig') }}
     {% endif %}
 {{ form_end(form) }}

@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\UX\Dropzone\Form\DropzoneType;
 
 class CocktailType extends AbstractType {
 
@@ -17,7 +18,7 @@ class CocktailType extends AbstractType {
             ->add('description', null, ['attr' => ['class' => 'tinymce']])
             ->add('recipe', null, ['attr' => ['class' => 'tinymce']])
             ->add('glass')
-            ->add('photo', FileType::class, [
+            ->add('photo', DropzoneType::class, [
                 'required' => false,
                 'mapped' => false,
                 'constraints' => [

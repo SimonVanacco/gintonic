@@ -7,34 +7,38 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ cocktail.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ cocktail.name }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ cocktail.description | raw }}</td>
-            </tr>
-            <tr>
-                <th>Recipe</th>
-                <td>{{ cocktail.recipe }}</td>
-            </tr>
-            <tr>
-                <th>IsFeatured</th>
-                <td>{{ cocktail.isFeatured ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Level</th>
-                <td>{{ cocktail.level }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                <td>{{ cocktail.photo }}</td>
-            </tr>
+        <tr>
+            <th>{{ 'Id'|trans }}</th>
+            <td>{{ cocktail.id }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Name'|trans }}</th>
+            <td>{{ cocktail.name }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Description'|trans }}</th>
+            <td>{{ cocktail.description | raw }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Recipe'|trans }}</th>
+            <td>{{ cocktail.recipe }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Featured ?'|trans }}</th>
+            <td>{{ cocktail.isFeatured ? 'Yes' : 'No' }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Level'|trans }}</th>
+            <td>{{ cocktail.level }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Photo'|trans }}</th>
+            <td>
+                {% if cocktail.photo %}
+                    <img src="{{ asset(cocktails_directory ~ "/" ~ cocktail.photo) }}" class="img-fluid" alt="{{ cocktail.name }}">
+                {% endif %}
+            </td>
+        </tr>
         </tbody>
     </table>
 
