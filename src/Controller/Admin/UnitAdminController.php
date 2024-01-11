@@ -8,7 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/admin/unit')]
 class UnitAdminController extends AbstractController
@@ -39,7 +39,7 @@ class UnitAdminController extends AbstractController
             return $this->redirectToRoute('unit_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin/unit/new.html.twig', [
+        return $this->render('admin/unit/new.html.twig', [
             'unit' => $unit,
             'form' => $form,
         ]);
@@ -65,7 +65,7 @@ class UnitAdminController extends AbstractController
             return $this->redirectToRoute('unit_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin/unit/edit.html.twig', [
+        return $this->render('admin/unit/edit.html.twig', [
             'unit' => $unit,
             'form' => $form,
         ]);
@@ -74,7 +74,7 @@ class UnitAdminController extends AbstractController
     #[Route('/{id}', name: 'unit_admin_delete', methods: ['POST'])]
     public function delete(Request $request, Unit $unit, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$unit->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $unit->getId(), $request->request->get('_token'))) {
             $entityManager->remove($unit);
             $entityManager->flush();
         }

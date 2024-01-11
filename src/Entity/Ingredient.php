@@ -6,120 +6,118 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\IngredientRepository")
- */
-class Ingredient {
+#[ORM\Entity(repositoryClass: \App\Repository\IngredientRepository::class)]
+class Ingredient implements \Stringable
+{
 
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private string $name = '';
 
-    /**
-     * @ORM\Column(type="text", nullable=true)
-     */
-    private ?string $description;
+    #[ORM\Column(type: 'text', nullable: true)]
+    private ?string $description = null;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
+    #[ORM\Column(type: 'boolean')]
     private bool $isInStock = false;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
+    #[ORM\Column(type: 'boolean')]
     private bool $isToBuy = false;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $photo;
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $photo = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=IngredientCategory::class)
-     */
-    private ?IngredientCategory $category;
+    #[ORM\ManyToOne(targetEntity: IngredientCategory::class)]
+    private ?IngredientCategory $category = null;
 
-    /**
-     * @ORM\OneToMany(targetEntity=CocktailIngredient::class, mappedBy="ingredient", orphanRemoval=true)
-     */
+    #[ORM\OneToMany(targetEntity: CocktailIngredient::class, mappedBy: 'ingredient', orphanRemoval: true)]
     private Collection $cocktails;
 
-    public function __toString(): string {
-        return $this->getName();
+    public function __toString(): string
+    {
+        return (string) $this->getName();
     }
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->cocktails = new ArrayCollection();
     }
 
-    public function getId(): ?int {
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function getName(): ?string {
+    public function getName(): ?string
+    {
         return $this->name;
     }
 
-    public function setName(string $name): self {
+    public function setName(string $name): self
+    {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getDescription(): ?string {
+    public function getDescription(): ?string
+    {
         return $this->description;
     }
 
-    public function setDescription(?string $description): self {
+    public function setDescription(?string $description): self
+    {
         $this->description = $description;
 
         return $this;
     }
 
-    public function getIsInStock(): ?bool {
+    public function getIsInStock(): ?bool
+    {
         return $this->isInStock;
     }
 
-    public function setIsInStock(?bool $isInStock): self {
+    public function setIsInStock(?bool $isInStock): self
+    {
         $this->isInStock = $isInStock;
 
         return $this;
     }
 
-    public function getIsToBuy(): ?bool {
+    public function getIsToBuy(): ?bool
+    {
         return $this->isToBuy;
     }
 
-    public function setIsToBuy(?bool $isToBuy): self {
+    public function setIsToBuy(?bool $isToBuy): self
+    {
         $this->isToBuy = $isToBuy;
 
         return $this;
     }
 
-    public function getPhoto(): ?string {
+    public function getPhoto(): ?string
+    {
         return $this->photo;
     }
 
-    public function setPhoto(?string $photo): self {
+    public function setPhoto(?string $photo): self
+    {
         $this->photo = $photo;
 
         return $this;
     }
 
-    public function getCategory(): ?IngredientCategory {
+    public function getCategory(): ?IngredientCategory
+    {
         return $this->category;
     }
 
-    public function setCategory(?IngredientCategory $category): self {
+    public function setCategory(?IngredientCategory $category): self
+    {
         $this->category = $category;
 
         return $this;
@@ -128,11 +126,13 @@ class Ingredient {
     /**
      * @return \Doctrine\Common\Collections\Collection|CocktailIngredient[]
      */
-    public function getCocktails(): array|\Doctrine\Common\Collections\Collection {
+    public function getCocktails(): array|\Doctrine\Common\Collections\Collection
+    {
         return $this->cocktails;
     }
 
-    public function addCocktail(CocktailIngredient $cocktail): self {
+    public function addCocktail(CocktailIngredient $cocktail): self
+    {
         if (!$this->cocktails->contains($cocktail)) {
             $this->cocktails[] = $cocktail;
             $cocktail->setIngredient($this);
@@ -141,7 +141,8 @@ class Ingredient {
         return $this;
     }
 
-    public function removeCocktail(CocktailIngredient $cocktail): self {
+    public function removeCocktail(CocktailIngredient $cocktail): self
+    {
         if ($this->cocktails->contains($cocktail)) {
             $this->cocktails->removeElement($cocktail);
             // set the owning side to null (unless already changed)

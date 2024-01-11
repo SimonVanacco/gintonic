@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
-class CocktailFileUploader extends AbstractFileUploader {
+class CocktailFileUploader extends AbstractFileUploader
+{
 
 }

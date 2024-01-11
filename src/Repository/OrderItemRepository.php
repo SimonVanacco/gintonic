@@ -14,12 +14,15 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method OrderItem[]    findAll()
  * @method OrderItem[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class OrderItemRepository extends ServiceEntityRepository {
-    public function __construct(ManagerRegistry $registry) {
+class OrderItemRepository extends ServiceEntityRepository
+{
+    public function __construct(ManagerRegistry $registry)
+    {
         parent::__construct($registry, OrderItem::class);
     }
 
-    public function add(OrderItem $entity, bool $flush = false): void {
+    public function add(OrderItem $entity, bool $flush = false): void
+    {
         $this->getEntityManager()->persist($entity);
 
         if ($flush) {
@@ -27,7 +30,8 @@ class OrderItemRepository extends ServiceEntityRepository {
         }
     }
 
-    public function remove(OrderItem $entity, bool $flush = false): void {
+    public function remove(OrderItem $entity, bool $flush = false): void
+    {
         $this->getEntityManager()->remove($entity);
 
         if ($flush) {

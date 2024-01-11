@@ -15,8 +15,7 @@ class GlassType extends AbstractType
             ->add('name')
             ->add('icon')
             ->add('iconFamily')
-            ->add('image')
-        ;
+            ->add('image');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

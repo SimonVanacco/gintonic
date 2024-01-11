@@ -13,8 +13,7 @@ class UnitType extends AbstractType
     {
         $builder
             ->add('singular')
-            ->add('plural')
-        ;
+            ->add('plural');
     }
 
     public function configureOptions(OptionsResolver $resolver): void
