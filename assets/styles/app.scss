@@ -2,15 +2,13 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-$body-bg: #202026;
-$body-color: #fff;
-//$dark: #323136;
+$body-bg-dark: #202026;
 $primary: #A88C6A;
-//$secondary: #A88C6A;
-$dark: darken($body-bg, 1.3);
+$dark: darken($body-bg-dark, 1.3);
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
 
