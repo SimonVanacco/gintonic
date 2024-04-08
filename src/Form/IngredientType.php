@@ -9,25 +9,27 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
 
-class IngredientType extends AbstractType {
-    public function buildForm(FormBuilderInterface $builder, array $options): void {
+class IngredientType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
         $builder
             ->add('name', null, [
                 'required' => true,
             ])
             ->add('description', null, [
-                'required' => false
+                'required' => false,
             ])
             ->add('category', null, [
-                'required' => false
+                'required' => false,
             ])
             ->add('photo', FileType::class, [
-                'required' => false,
-                'mapped' => false,
+                'required'    => false,
+                'mapped'      => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '2048k',
-                        'mimeTypes' => [
+                        'maxSize'          => '2048k',
+                        'mimeTypes'        => [
                             'image/jpeg',
                             'image/jpg',
                             'image/png',
@@ -40,7 +42,8 @@ class IngredientType extends AbstractType {
             ]);
     }
 
-    public function configureOptions(OptionsResolver $resolver): void {
+    public function configureOptions(OptionsResolver $resolver): void
+    {
         $resolver->setDefaults([
             'data_class' => Ingredient::class,
         ]);

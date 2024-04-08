@@ -1,14 +1,4 @@
 {
-    "doctrine/annotations": {
-        "version": "1.14",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "1.10",
-            "ref": "64d8583af5ea57b7afa4aba4b159907f3a148b05"
-        },
-        "files": []
-    },
     "doctrine/cache": {
         "version": "2.1.1"
     },
@@ -79,15 +69,6 @@
     },
     "egulias/email-validator": {
         "version": "3.1.2"
-    },
-    "friendsofphp/proxy-manager-lts": {
-        "version": "v1.0.5"
-    },
-    "laminas/laminas-code": {
-        "version": "4.5.1"
-    },
-    "lexik/form-filter-bundle": {
-        "version": "v7.0.2"
     },
     "lorenzo/pinky": {
         "version": "1.0.6"
@@ -217,17 +198,8 @@
     "sebastian/version": {
         "version": "3.0.2"
     },
-    "sensio/framework-extra-bundle": {
-        "version": "6.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "5.2",
-            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
-        },
-        "files": [
-            "config/packages/sensio_framework_extra.yaml"
-        ]
+    "spiriitlabs/form-filter-bundle": {
+        "version": "v10.0.0"
     },
     "symfony/apache-pack": {
         "version": "1.0",
@@ -482,9 +454,6 @@
     "symfony/property-info": {
         "version": "v5.4.2"
     },
-    "symfony/proxy-manager-bridge": {
-        "version": "v5.4.2"
-    },
     "symfony/routing": {
         "version": "6.2",
         "recipe": {
@@ -527,6 +496,15 @@
     },
     "symfony/service-contracts": {
         "version": "v2.5.0"
+    },
+    "symfony/stimulus-bundle": {
+        "version": "2.16",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.8",
+            "ref": "9e33a8a3794b603fb4be6c04ee5ecab901ce549e"
+        }
     },
     "symfony/stopwatch": {
         "version": "v5.4.0"
@@ -618,18 +596,6 @@
             "config/packages/dev/web_profiler.yaml",
             "config/packages/test/web_profiler.yaml",
             "config/routes/dev/web_profiler.yaml"
-        ]
-    },
-    "symfony/webapp-meta": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "67cae591d131c133d63b893c5324796b88c59b34"
-        },
-        "files": [
-            "config/packages/messenger.yaml"
         ]
     },
     "symfony/webpack-encore-bundle": {

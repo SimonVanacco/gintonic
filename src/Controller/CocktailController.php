@@ -9,32 +9,36 @@ use App\Form\PublicOrderType;
 use App\Repository\CocktailRepository;
 use App\Service\ConfigService;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 #[Route('/cocktail')]
-class CocktailController extends AbstractController {
+class CocktailController extends AbstractController
+{
 
     private TranslatorInterface $translator;
 
-    public function __construct(TranslatorInterface $translator) {
+    public function __construct(TranslatorInterface $translator)
+    {
         $this->translator = $translator;
     }
 
     #[Route('/autocomplete')]
-    public function autocomplete(Request $request, CocktailRepository $repository): Response {
+    public function autocomplete(Request $request, CocktailRepository $repository): Response
+    {
         return $this->render('_partials/_autocomplete.html.twig', [
             'entities' => $repository->findByAutocomplete($request->get('q', '')),
         ]);
     }
 
     #[Route('/{id}')]
-    public function show(Cocktail $cocktail): Response {
+    public function show(Cocktail $cocktail): Response
+    {
         return $this->render('app/cocktail/show.html.twig', [
             'cocktail' => $cocktail,
         ]);
@@ -48,7 +52,6 @@ class CocktailController extends AbstractController {
         MailerInterface $mailer,
         Cocktail $cocktail,
     ): Response {
-
         $session = $request->getSession();
 
         if (!$configService->getConfigItem('ordersOpen')) {
@@ -64,13 +67,19 @@ class CocktailController extends AbstractController {
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Order $order */
             $order = $form->getData();
-            $item = new OrderItem();
+            $item  = new OrderItem();
             $item->setCocktail($cocktail);
             $order->addItem($item);
             $em->persist($order);
             $em->flush();
             $session->set('order_name', $order->getName());
-            $this->addFlash('success', [$this->translator->trans('Your order has been received ! '), $this->translator->trans('Please wait while your cocktail is being made')]);
+            $this->addFlash(
+                'success',
+                [
+                    $this->translator->trans('Your order has been received ! '),
+                    $this->translator->trans('Please wait while your cocktail is being made'),
+                ]
+            );
             $email = (new TemplatedEmail())
                 ->from($configService->getConfigItem('fromEmail'))
                 ->to($configService->getConfigItem('adminEmail'))
@@ -80,13 +89,13 @@ class CocktailController extends AbstractController {
                     'order' => $order,
                 ]);
             $mailer->send($email);
-            return $this->redirectToRoute('index', [], Response::HTTP_SEE_OTHER);
 
+            return $this->redirectToRoute('index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('app/cocktail/order.html.twig', [
             'cocktail' => $cocktail,
-            'form' => $form->createView(),
+            'form'     => $form->createView(),
         ]);
     }
 
