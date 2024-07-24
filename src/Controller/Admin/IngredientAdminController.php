@@ -40,7 +40,8 @@ class IngredientAdminController extends AbstractController
                 $newFilename = $fileUploader->upload($photoFile);
                 $ingredient->setPhoto($newFilename);
             }
-
+            $ingredient->setIsToBuy(false);
+            $ingredient->setIsInStock(true);
             $entityManager->persist($ingredient);
             $entityManager->flush();
 

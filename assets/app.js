@@ -20,3 +20,7 @@ document.addEventListener("turbo:load", function() {
         });
     });
 })
+
+document.addEventListener("turbo:render", function() {
+    WysiwygEditor.init();
+});

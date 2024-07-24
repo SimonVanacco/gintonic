@@ -103,8 +103,14 @@ a.widget-top-link {
 
 // Autocomplete
 
-//.autocomplete-wrapper {
-//  .dropdown-menu {
-//    display: inherit;
-//  }
-//}
+.ts-dropdown-content {
+  color: white !important;
+}
+
+.ts-control .item {
+  color: white !important;
+}
+
+.ts-wrapper.multi .ts-control > div {
+  background-color: $primary;
+}
