@@ -6035,7 +6035,7 @@ __metadata:
     sass-loader: "npm:^12.0.0"
     stimulus: "npm:^2.0.0"
     stimulus-use: "npm:^0.41.0"
-    tinymce: "npm:^5.10.2"
+    tinymce: "npm:^7.2.1"
     tom-select: "npm:^2.2.2"
     webpack-notifier: "npm:^1.6.0"
   languageName: unknown
@@ -6750,10 +6750,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinymce@npm:^5.10.2":
-  version: 5.10.9
-  resolution: "tinymce@npm:5.10.9"
-  checksum: 8b0d8602259d54ab89ffbf7bc4ea08f1bb35fa1f523748358d22550fed1abbffda3a2168af7c7a562a6bb8828c1c9dedb41e8ed1cd63b21a00f31ef39e708443
+"tinymce@npm:^7.2.1":
+  version: 7.2.1
+  resolution: "tinymce@npm:7.2.1"
+  checksum: 092d6f9f054e0301112c623eaaf07896c7d17e14bc1b38ea315eeb0fc42cbed47ed94dcc3d36b2e42001bff41dd408765368cda34b82889c9f54ca121cdb77d1
   languageName: node
   linkType: hard
 

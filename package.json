@@ -16,7 +16,7 @@
         "sass-loader": "^12.0.0",
         "stimulus": "^2.0.0",
         "stimulus-use": "^0.41.0",
-        "tinymce": "^5.10.2",
+        "tinymce": "^7.2.1",
         "tom-select": "^2.2.2",
         "webpack-notifier": "^1.6.0"
     },
