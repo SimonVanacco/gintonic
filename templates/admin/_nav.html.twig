@@ -1,0 +1,70 @@
+{% set route_name = app.request.attributes.get('_route') %}
+<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+    <a href="/" class="text-decoration-none">
+        <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0 me-md-auto text-white">
+            <div class="fs-4">GinTonic</div>
+            <div class="badge bg-primary">{{ app_version }}</div>
+        </div>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="{{ path('admin_index') }}" {% if 'admin_index' == route_name %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %}>
+                <i class="fa-solid fa-dashboard pe-1"></i>
+                {{ 'Dashboard'|trans }}
+            </a>
+        </li>
+        <li>
+            <a {% if 'order_admin_' in route_name %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="{{ path('order_admin_index') }}">
+                <i class="fa-solid fa-clipboard-list pe-1"></i>
+                {{ 'Orders'|trans }}
+            </a>
+        </li>
+        <li>
+            <a {% if 'cocktail_admin_' in route_name %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="{{ path('cocktail_admin_index') }}">
+                <i class="fa-solid fa-martini-glass-citrus pe-1"></i>
+                {{ 'Cocktails'|trans }}
+            </a>
+        </li>
+        <li>
+            <a {% if 'ingredient_admin_' in route_name %} class="nav-link active" aria-current="page" {% else %}class="nav-link" {% endif %} href="{{ path('ingredient_admin_index') }}">
+                <i class="fa-solid fa-lemon pe-1"></i>
+                {{ 'Ingredients'|trans }}
+            </a>
+        </li>
+        <li>
+            <a {% if 'user_admin' in route_name %}class="nav-link active" aria-current="page" {% else %}class="nav-link"{% endif %} href="{{ path('user_admin_index') }}">
+                <i class="fa-solid fa-users pe-1"></i>
+                {{ 'Users'|trans }}
+            </a>
+        </li>
+        <li>
+            <a {% if 'admin_config' in route_name %}class="nav-link active" aria-current="page" {% else %}class="nav-link"{% endif %} href="{{ path('admin_config_index') }}">
+                <i class="fa-solid fa-gear pe-1"></i>
+                {{ 'Config'|trans }}
+            </a>
+        </li>
+        <li class="dropdown">
+            <a {% if 'glass_admin_' in route_name or 'unit_admin_' in route_name %} class="nav-link dropdown-toggle active" aria-current="page" {% else %} class="nav-link dropdown-toggle" {% endif %} href="#" id="plusNavbarDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Plus
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="plusNavbarDropdownLink">
+                <li><a class="dropdown-item" href="{{ path('unit_admin_index') }}">{{ 'Units'|trans }}</a></li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user-circle pe-2 fa-2x"></i>
+            <strong>{{ app.user.fullName }}</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('logout') }}">{{ 'Sign out'|trans }}</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,4 +1,0 @@
-<form class="d-inline-block" method="post" action="{{ path('glass_admin_delete', {'id': glass.id}) }}" onsubmit="return confirm('{{ 'Are you sure you want to delete this item?'|trans }}');">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ glass.id) }}">
-    <button class="btn btn-outline-danger">{{ 'Delete'|trans }}</button>
-</form>

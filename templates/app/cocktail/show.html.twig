@@ -23,14 +23,6 @@
                 {% endif %}
             </div>
             <div class="col-12 col-md-7 col-lg-8">
-{#                <p class="mt-6">#}
-{#                    {% if cocktail.glass and cocktail.glass.icon and cocktail.glass.iconFamily %}#}
-{#                        <i class="{{ cocktail.glass.iconFamily }} fa-{{ cocktail.glass.icon }} text-right mr-2"></i>#}
-{#                    {% endif %}#}
-{#                    {% for tag in cocktail.tags %}#}
-{#                        <span class="badge badge-primary">{{ tag }}</span> #}{# Todo: Outline #}
-{#                    {% endfor %}#}
-{#                </p>#}
                 {% if cocktail.description %}
                     <p class="mt-5 mb-5">{{ cocktail.description|raw }}</p>
                 {% endif %}

@@ -18,7 +18,6 @@ class CocktailType extends AbstractType
             ->add('name')
             ->add('description', null, ['attr' => ['class' => 'tinymce']])
             ->add('recipe', null, ['attr' => ['class' => 'tinymce']])
-            ->add('glass')
             ->add('photo', DropzoneType::class, [
                 'required'    => false,
                 'mapped'      => false,

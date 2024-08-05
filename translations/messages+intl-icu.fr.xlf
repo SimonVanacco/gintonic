@@ -5,325 +5,329 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="dpAPG.0" resname="Back">
+      <trans-unit id=".QFPbFe" resname="Back">
         <source>Back</source>
         <target>Retour</target>
       </trans-unit>
-      <trans-unit id="h2dduDo" resname="Ingredients">
+      <trans-unit id="StHHp.J" resname="Ingredients">
         <source>Ingredients</source>
         <target>Ingrédients</target>
       </trans-unit>
-      <trans-unit id="3NHVIj9" resname="Name">
+      <trans-unit id="wbMeKOh" resname="Name">
         <source>Name</source>
         <target>Nom</target>
       </trans-unit>
-      <trans-unit id="giurjUG" resname="Quantity">
+      <trans-unit id="XGlygks" resname="Quantity">
         <source>Quantity</source>
         <target>Quantité</target>
       </trans-unit>
-      <trans-unit id="Z7aWRoY" resname="Dashboard">
+      <trans-unit id="xHsbIh6" resname="Dashboard">
         <source>Dashboard</source>
         <target>Tableau de bord</target>
       </trans-unit>
-      <trans-unit id="Oj6_4.9" resname="Cocktails">
+      <trans-unit id="3A6khrz" resname="Cocktails">
         <source>Cocktails</source>
         <target>Cocktails</target>
       </trans-unit>
-      <trans-unit id="6yXt4j5" resname="Glasses">
-        <source>Glasses</source>
-        <target>Verres</target>
-      </trans-unit>
-      <trans-unit id="n7Zmmnf" resname="Units">
+      <trans-unit id="Ccx6K8m" resname="Units">
         <source>Units</source>
         <target>Unités</target>
       </trans-unit>
-      <trans-unit id="xTPK_ra" resname="Featured">
+      <trans-unit id="sQ4WiFu" resname="Featured">
         <source>Featured</source>
         <target>Propulsé</target>
       </trans-unit>
-      <trans-unit id="1H18sOT" resname="More">
+      <trans-unit id="o3vRjwz" resname="More">
         <source>More</source>
         <target>Plus</target>
       </trans-unit>
-      <trans-unit id="OnhpU4i" resname="Home">
+      <trans-unit id="ExFLJqx" resname="Home">
         <source>Home</source>
         <target>Accueil</target>
       </trans-unit>
-      <trans-unit id="Y44kn0o" resname="Filter">
+      <trans-unit id="o7tHpZ5" resname="Filter">
         <source>Filter</source>
         <target>Filtrer</target>
       </trans-unit>
-      <trans-unit id="2u52BrM" resname="Reset">
+      <trans-unit id="e9cnuAC" resname="Reset">
         <source>Reset</source>
         <target>Vider</target>
       </trans-unit>
-      <trans-unit id="nWMiwfT" resname="Login">
+      <trans-unit id="4f3WEva" resname="Login">
         <source>Login</source>
         <target>Connexion</target>
       </trans-unit>
-      <trans-unit id="lpzL089" resname="Email">
+      <trans-unit id="JZi_tm0" resname="Email">
         <source>Email</source>
         <target>Email</target>
       </trans-unit>
-      <trans-unit id="588_9PF" resname="Password">
+      <trans-unit id="GqmFSHc" resname="Password">
         <source>Password</source>
         <target>Mot de passe</target>
       </trans-unit>
-      <trans-unit id="pVJkGpp" resname="Edit Cocktail">
+      <trans-unit id="NWr4NgU" resname="Edit Cocktail">
         <source>Edit Cocktail</source>
         <target>Modifier le cocktail</target>
       </trans-unit>
-      <trans-unit id="U0M9PNE" resname="back to list">
+      <trans-unit id="vci9HOQ" resname="back to list">
         <source>back to list</source>
         <target>retour à la liste</target>
       </trans-unit>
-      <trans-unit id="FQn1YfJ" resname="Save">
+      <trans-unit id="z9OKodR" resname="Save">
         <source>Save</source>
         <target>Enregistrer</target>
       </trans-unit>
-      <trans-unit id="XqIEDod" resname="Cocktail list">
+      <trans-unit id="Zj5wmPI" resname="Cocktail list">
         <source>Cocktail list</source>
         <target>Liste des cocktails</target>
       </trans-unit>
-      <trans-unit id="EhVukhv" resname="Id">
+      <trans-unit id="hm.JYE2" resname="Id">
         <source>Id</source>
         <target>Id</target>
       </trans-unit>
-      <trans-unit id="MlJci8B" resname="Enabled ?">
+      <trans-unit id="cMkYUui" resname="Enabled ?">
         <source>Enabled ?</source>
         <target>Activé ?</target>
       </trans-unit>
-      <trans-unit id="CPzNQ5Y" resname="Featured ?">
+      <trans-unit id="9trazFP" resname="Featured ?">
         <source>Featured ?</source>
         <target>Propulsé ?</target>
       </trans-unit>
-      <trans-unit id=".4BZ3Gd" resname="Actions">
+      <trans-unit id="1_MZEgP" resname="Actions">
         <source>Actions</source>
         <target>Actions</target>
       </trans-unit>
-      <trans-unit id="DfbxytN" resname="Show">
+      <trans-unit id="OWNfiXE" resname="Show">
         <source>Show</source>
         <target>Afficher</target>
       </trans-unit>
-      <trans-unit id="RkxP.QG" resname="Edit">
+      <trans-unit id="M.l1CPU" resname="Edit">
         <source>Edit</source>
         <target>Modifier</target>
       </trans-unit>
-      <trans-unit id="bi6mN7M" resname="No records found">
+      <trans-unit id="ml6ogGF" resname="No records found">
         <source>No records found</source>
         <target>Aucun enregistrement trouvé</target>
       </trans-unit>
-      <trans-unit id="nz33U6Q" resname="Create new">
+      <trans-unit id="YNZdbtH" resname="Create new">
         <source>Create new</source>
         <target>Ajouter</target>
       </trans-unit>
-      <trans-unit id="REE8PZe" resname="Are you sure you want to delete this item?">
+      <trans-unit id="hNzgF6z" resname="Are you sure you want to delete this item?">
         <source>Are you sure you want to delete this item?</source>
         <target>Voulez-vous vraiment supprimer cet item ?</target>
       </trans-unit>
-      <trans-unit id="4tClSWj" resname="Delete">
+      <trans-unit id="Z_crX_u" resname="Delete">
         <source>Delete</source>
         <target>Supprimer</target>
       </trans-unit>
-      <trans-unit id="Q5EDCD4" resname="New Cocktail">
+      <trans-unit id="rMOyRKo" resname="New Cocktail">
         <source>New Cocktail</source>
         <target>Nouveau Cocktail</target>
       </trans-unit>
-      <trans-unit id="f1jvXbE" resname="Add new cocktail">
+      <trans-unit id="VCtPT4j" resname="Add new cocktail">
         <source>Add new cocktail</source>
         <target>Ajouter un nouveau cocktail</target>
       </trans-unit>
-      <trans-unit id="Xaj3_8K" resname="Back to list">
+      <trans-unit id="1IPvogP" resname="Back to list">
         <source>Back to list</source>
         <target>Retour à la liste</target>
       </trans-unit>
-      <trans-unit id="lxSvEpt" resname="Edit Ingredient">
+      <trans-unit id="cgSkimX" resname="Edit Ingredient">
         <source>Edit Ingredient</source>
         <target>Modifier l'ingrédient</target>
       </trans-unit>
-      <trans-unit id="RuOq7sL" resname="Ingredient list">
+      <trans-unit id="WBzL2Lz" resname="Ingredient list">
         <source>Ingredient list</source>
         <target>Liste des ingrédients</target>
       </trans-unit>
-      <trans-unit id="RfE9YKj" resname="In stock ?">
+      <trans-unit id="LtKbuBq" resname="In stock ?">
         <source>In stock ?</source>
         <target>En stock ?</target>
       </trans-unit>
-      <trans-unit id="esTf5EC" resname="In shopping list ?">
+      <trans-unit id="gvnVGto" resname="In shopping list ?">
         <source>In shopping list ?</source>
         <target>A acheter ?</target>
       </trans-unit>
-      <trans-unit id="KhG.JIJ" resname="New ingredient">
+      <trans-unit id="wkjWvEs" resname="New ingredient">
         <source>New ingredient</source>
         <target>Nouvel ingrédient</target>
       </trans-unit>
-      <trans-unit id="zLQbpxy" resname="Add new ingredient">
+      <trans-unit id="HvYuNWQ" resname="Add new ingredient">
         <source>Add new ingredient</source>
         <target>Ajouter un nouvel ingrédient</target>
       </trans-unit>
-      <trans-unit id="S0CTGH6" resname="Edit Unit">
+      <trans-unit id="fX42i2I" resname="Edit Unit">
         <source>Edit Unit</source>
         <target>Modifier l'unité</target>
       </trans-unit>
-      <trans-unit id="6feu55v" resname="Unit list">
+      <trans-unit id="P5wg46e" resname="Unit list">
         <source>Unit list</source>
         <target>Liste des unités</target>
       </trans-unit>
-      <trans-unit id="ZMRFw9G" resname="Singular">
+      <trans-unit id="AVh0ZSY" resname="Singular">
         <source>Singular</source>
         <target>Singulier</target>
       </trans-unit>
-      <trans-unit id="GPtr4zZ" resname="Plural">
+      <trans-unit id="VqxBkbX" resname="Plural">
         <source>Plural</source>
         <target>Pluriel</target>
       </trans-unit>
-      <trans-unit id="idnqc3b" resname="New unit">
+      <trans-unit id="CLL0F5H" resname="New unit">
         <source>New unit</source>
         <target>Nouvelle unité</target>
       </trans-unit>
-      <trans-unit id="tQK791n" resname="Add new unit">
+      <trans-unit id="9RvIn_i" resname="Add new unit">
         <source>Add new unit</source>
         <target>Ajouter une nouvelle unité</target>
       </trans-unit>
-      <trans-unit id="qDGwnPH" resname="Edit Glass">
-        <source>Edit Glass</source>
-        <target>Modifier l'unité</target>
-      </trans-unit>
-      <trans-unit id="AZPyYmT" resname="Glass list">
-        <source>Glass list</source>
-        <target>Liste des verres</target>
-      </trans-unit>
-      <trans-unit id="o1q81tr" resname="Icon">
+      <trans-unit id="p9O9x_E" resname="Icon">
         <source>Icon</source>
         <target>Icône</target>
       </trans-unit>
-      <trans-unit id="3LAplNc" resname="New glass">
-        <source>New glass</source>
-        <target>Nouveau verre</target>
-      </trans-unit>
-      <trans-unit id="41Huy_m" resname="Add new glass">
-        <source>Add new glass</source>
-        <target>Ajouter un nouveau verre</target>
-      </trans-unit>
-      <trans-unit id="gsJoGIz" resname="Glass">
-        <source>Glass</source>
-        <target>Verre</target>
-      </trans-unit>
-      <trans-unit id="R9KlFe8" resname="Loading...">
+      <trans-unit id="gzEusjk" resname="Loading...">
         <source>Loading...</source>
         <target>Chargement...</target>
       </trans-unit>
-      <trans-unit id="S0LGaQ6" resname="Administration">
+      <trans-unit id="mpHDX6N" resname="Administration">
         <source>Administration</source>
         <target>Administration</target>
       </trans-unit>
-      <trans-unit id="3qcO2wD" resname="Powered by GinTonic">
+      <trans-unit id="2PmAHjY" resname="Powered by GinTonic">
         <source>Powered by GinTonic</source>
         <target>Propulsé par GinTonic</target>
       </trans-unit>
-      <trans-unit id="t_is3VI" resname="Orders">
+      <trans-unit id=".z7PABZ" resname="Orders">
         <source>Orders</source>
         <target>Commandes</target>
       </trans-unit>
-      <trans-unit id="K99zARN" resname="Orders today">
+      <trans-unit id="uyfRltg" resname="Orders today">
         <source>Orders today</source>
         <target>Commandes aujourd'hui</target>
       </trans-unit>
-      <trans-unit id="wusQlBb" resname="Available cocktails">
+      <trans-unit id="Zi0WIwG" resname="Available cocktails">
         <source>Available cocktails</source>
         <target>Cocktails disponibles</target>
       </trans-unit>
-      <trans-unit id="yQxR7vy" resname="Available ingredients">
+      <trans-unit id="ttdH_4h" resname="Available ingredients">
         <source>Available ingredients</source>
         <target>Ingrédients en stock</target>
       </trans-unit>
-      <trans-unit id="Wb5xMzy" resname="Optional">
+      <trans-unit id="D5DVjoG" resname="Optional">
         <source>Optional</source>
         <target>Optionnel</target>
       </trans-unit>
-      <trans-unit id="ezmp.Qf" resname="Decoration">
+      <trans-unit id="tK2UBvf" resname="Decoration">
         <source>Decoration</source>
         <target>Décoration</target>
       </trans-unit>
-      <trans-unit id="PTydFBx" resname="Shopping list">
+      <trans-unit id="HHsP8tg" resname="Shopping list">
         <source>Shopping list</source>
         <target>Liste de courses</target>
       </trans-unit>
-      <trans-unit id="SrJyLBm" resname="Nothing to buy !">
+      <trans-unit id="r4k9Tqe" resname="Nothing to buy !">
         <source>Nothing to buy !</source>
         <target>Rien à acheter !</target>
       </trans-unit>
-      <trans-unit id="3DgIiMT" resname="Loading">
+      <trans-unit id="a5w5Bbx" resname="Loading">
         <source>Loading</source>
         <target>Chargement</target>
       </trans-unit>
-      <trans-unit id="mcQKtAW" resname="Date">
+      <trans-unit id="1cuPpsS" resname="Date">
         <source>Date</source>
         <target>Date</target>
       </trans-unit>
-      <trans-unit id="_456Gjy" resname="Items">
+      <trans-unit id="GRHiIyr" resname="Items">
         <source>Items</source>
         <target>Items</target>
       </trans-unit>
-      <trans-unit id="ZM.xMZ0" resname="Action">
+      <trans-unit id="BUIQ..a" resname="Action">
         <source>Action</source>
         <target>Action</target>
       </trans-unit>
-      <trans-unit id="a_CQgly" resname="Order">
+      <trans-unit id="V2sSnK9" resname="Order">
         <source>Order</source>
         <target>Commander</target>
       </trans-unit>
-      <trans-unit id="72NpccQ" resname="Order this cocktail">
+      <trans-unit id="lcmVAd_" resname="Order this cocktail">
         <source>Order this cocktail</source>
         <target>Commander ce cocktail</target>
       </trans-unit>
-      <trans-unit id="jx2diTA" resname="Order now !">
+      <trans-unit id="5THYsD1" resname="Order now !">
         <source>Order now !</source>
         <target>Commander maintenant !</target>
       </trans-unit>
-      <trans-unit id="q1Ov._E" resname="Your order has been received !">
+      <trans-unit id="xv4P0ep" resname="Your order has been received !">
         <source>Your order has been received !</source>
         <target>Votre commande a bien été reçue !</target>
       </trans-unit>
-      <trans-unit id="SRTNBTa" resname="Stay logged-in">
+      <trans-unit id="VMlnJhQ" resname="Stay logged-in">
         <source>Stay logged-in</source>
         <target>Rester connecter</target>
       </trans-unit>
-      <trans-unit id="LGsuJTw" resname="Your name">
+      <trans-unit id="Hul70rO" resname="Your name">
         <source>Your name</source>
         <target>Votre nom</target>
       </trans-unit>
-      <trans-unit id="uuGbDIi" resname="Your order has been received ! ">
+      <trans-unit id="KGoa._L" resname="Your order has been received ! ">
         <source>Your order has been received ! </source>
         <target>Votre commande est enregistrée ! </target>
       </trans-unit>
-      <trans-unit id="yX_ccHB" resname="Please wait while your cocktail is being made">
+      <trans-unit id="NNJqZgS" resname="Please wait while your cocktail is being made">
         <source>Please wait while your cocktail is being made</source>
         <target>Veuillez patienter, nous préparons votre cocktail</target>
       </trans-unit>
-      <trans-unit id="Um4Ah8w" resname="Description">
+      <trans-unit id="NMmVjl0" resname="Description">
         <source>Description</source>
         <target>Description</target>
       </trans-unit>
-      <trans-unit id="rsaTUrW" resname="Recipe">
+      <trans-unit id="3zAjYy1" resname="Recipe">
         <source>Recipe</source>
         <target>Recette</target>
       </trans-unit>
-      <trans-unit id="FwkwXJ_" resname="Level">
+      <trans-unit id="q2_TGUG" resname="Level">
         <source>Level</source>
         <target>Niveau</target>
       </trans-unit>
-      <trans-unit id="2E7rrak" resname="Photo">
+      <trans-unit id="edjKmT5" resname="Photo">
         <source>Photo</source>
         <target>Photo</target>
       </trans-unit>
-      <trans-unit id="CjlzJqA" resname="Edit Configuration">
+      <trans-unit id="2qvKN_I" resname="Edit Configuration">
         <source>Edit Configuration</source>
         <target>Configurer</target>
       </trans-unit>
-      <trans-unit id="h_iau0w" resname="Config">
+      <trans-unit id="vrcHGJ2" resname="Config">
         <source>Config</source>
         <target>Configuration</target>
+      </trans-unit>
+      <trans-unit id="BCGjfox" resname="Users">
+        <source>Users</source>
+        <target>Utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="rPENuxy" resname="Sign out">
+        <source>Sign out</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="gvmPMLZ" resname="New user">
+        <source>New user</source>
+        <target>Nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit id="3EZgAIw" resname="Add new user">
+        <source>Add new user</source>
+        <target>Ajouter un nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit id="uGv_5v0" resname="Edit User">
+        <source>Edit User</source>
+        <target>Éditer un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="nMafUUp" resname="Administrators list">
+        <source>Administrators list</source>
+        <target>Liste des administrateurs</target>
+      </trans-unit>
+      <trans-unit id="k1iate7" resname="Leave empty if you do not want to change the password">
+        <source>Leave empty if you do not want to change the password</source>
+        <target>Laissez video si vous ne voulez pas changer de mot de passe</target>
       </trans-unit>
     </body>
   </file>

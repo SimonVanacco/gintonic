@@ -3,11 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Cocktail;
-use App\Entity\Glass;
 use App\Form\Type\CocktailAutocompleteType;
 use App\Form\Type\IngredientsAutocompleteType;
 use Doctrine\ORM\Query\Expr\Join;
-use Spiriit\Bundle\FormFilterBundle\Filter\Form\Type as Filters;
 use Spiriit\Bundle\FormFilterBundle\Filter\Query\QueryInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -46,11 +44,6 @@ class CocktailFilterType extends AbstractType
                         $qb->andWhere('ci.ingredient = ' . $val->getId());
                     }
                 },
-            ])
-            ->add('glass', Filters\EntityFilterType::class, [
-                'class'    => Glass::class,
-                'required' => false,
-                'attr'     => ['data-autosubmit' => 'true'],
             ])
             ->add('fake', HiddenType::class, [
                 'mapped'       => false,

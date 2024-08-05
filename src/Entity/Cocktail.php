@@ -25,9 +25,6 @@ class Cocktail
     #[ORM\Column(type: 'text', nullable: true)]
     private ?string $recipe;
 
-    #[ORM\ManyToOne(targetEntity: Glass::class)]
-    private ?Glass $glass;
-
     #[ORM\Column(type: 'boolean', nullable: true)]
     private bool $isEnabled = true;
 
@@ -94,18 +91,6 @@ class Cocktail
     public function setRecipe(?string $recipe): self
     {
         $this->recipe = $recipe;
-
-        return $this;
-    }
-
-    public function getGlass(): ?Glass
-    {
-        return $this->glass;
-    }
-
-    public function setGlass(?Glass $glass): self
-    {
-        $this->glass = $glass;
 
         return $this;
     }
