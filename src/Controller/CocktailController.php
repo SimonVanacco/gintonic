@@ -87,7 +87,6 @@ class CocktailController extends AbstractController
             );
 
 
-
             try {
                 $email = (new TemplatedEmail())
                     ->from($configService->getConfigItem('fromEmail'))
@@ -107,7 +106,12 @@ class CocktailController extends AbstractController
                 try {
                     $sms = new SmsMessage(
                         $smsNotificationTo,
-                        'New order on the GinTonic app for ' . $order->getName() . ' ! Please follow this link : ' . $this->generateUrl('order_admin_show', ['id' => $order->getId()], UrlGeneratorInterface::ABSOLUTE_URL)
+                        'New order on the GinTonic app for ' . $order->getName(
+                        ) . ' ! Please follow this link : ' . $this->generateUrl(
+                            'order_admin_show',
+                            ['id' => $order->getId()],
+                            UrlGeneratorInterface::ABSOLUTE_URL
+                        )
                     );
                     $sentMessage = $texter->send($sms);
                 } catch (\Symfony\Component\Notifier\Exception\TransportExceptionInterface $e) {

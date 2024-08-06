@@ -39,7 +39,13 @@
             </a>
         </li>
         <li>
-            <a {% if 'admin_config' in route_name %}class="nav-link active" aria-current="page" {% else %}class="nav-link"{% endif %} href="{{ path('admin_config_index') }}">
+            <a {% if 'admin_config_appearance' == route_name %}class="nav-link active" aria-current="page" {% else %}class="nav-link"{% endif %} href="{{ path('admin_config_appearance') }}">
+                <i class="fa-solid fa-palette pe-1"></i>
+                {{ 'Appearance'|trans }}
+            </a>
+        </li>
+        <li>
+            <a {% if 'admin_config_index' == route_name %}class="nav-link active" aria-current="page" {% else %}class="nav-link"{% endif %} href="{{ path('admin_config_index') }}">
                 <i class="fa-solid fa-gear pe-1"></i>
                 {{ 'Config'|trans }}
             </a>

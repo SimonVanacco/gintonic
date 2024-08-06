@@ -25,7 +25,7 @@ Gintonic is a self-hosted homebar manager : add the cocktails you love to make a
 Gintonic is a fairly standard Symfony 6 application which requires :
 
 - A webserver of your choice
-- PHP 8, Composer, Npm / Yarn
+- PHP 8.2+, Composer, Npm / Yarn
 - A MySQL server
 - A SMTP server (if you want to get mail notifications)
 

@@ -5,12 +5,12 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Form\UserType;
 use Doctrine\ORM\EntityManagerInterface;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Security\Http\Attribute\IsCsrfTokenValid;
 
 #[Route('/admin/user')]
 class UserAdminController extends AbstractController
@@ -40,7 +40,7 @@ class UserAdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $newClearPassword = $form['password']->getData();
             if (!$newClearPassword) {
-                throw new \Exception('Password is mandatory');
+                throw new Exception('Password is mandatory');
             }
             $hashedPassword = $passwordHasher->hashPassword(
                 $user,

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="dark" lang="{{ app.locale }}">
+<html data-bs-theme="{{ appConfig.getConfigItem('theme') | default('dark') }}" lang="{{ app.locale }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,7 @@
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
+        <link rel="stylesheet" href="{{ asset('gintonic.css') }}?v={{ appConfig.getConfigItem('styleCacheKey') }}">
     {% endblock %}
 
     {% block javascripts %}

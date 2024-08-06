@@ -1,0 +1,13 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}{{ 'Edit Appearance'|trans }}{% endblock %}
+
+{% block content %}
+    <h1>{{ 'Edit Appearance'|trans }}</h1>
+
+    {{ form_start(form, {'attr': {'data-controller': 'loading-submit', 'data-action': 'loading-submit#submit turbo:submit-end->loading-submit#end'}}) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-outline-primary" data-loading-submit-target="button">{{ button_label|default('Save'|trans) }}</button>
+    {{ form_end(form) }}
+
+{% endblock %}
