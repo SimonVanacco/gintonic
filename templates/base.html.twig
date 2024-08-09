@@ -22,7 +22,11 @@
         <div class="d-flex justify-content-center">
             <div>
                 <a href="{{ path('index') }}">
-                    <img alt="Logo" src="{{ asset('images/default-logo.svg') }}" width="400px">
+                    {% if appConfig.getConfigItem('logo') %}
+                        <img src="{{ asset(uploads_directory ~ "/" ~ appConfig.getConfigItem('logo')) }}" alt="Current logo" width="400px"/>
+                    {% else %}
+                        <img alt="Logo" src="{{ asset('images/default-logo.svg') }}" width="400px">
+                    {% endif %}
                 </a>
             </div>
         </div>

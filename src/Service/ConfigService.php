@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Entity\ConfigItem;
 use App\Repository\ConfigItemRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 
@@ -14,9 +15,10 @@ class ConfigService
     public const CACHE_KEY = "app_config";
 
     public function __construct(
-        private EntityManagerInterface $em,
-        private ConfigItemRepository $repository,
-        private CacheInterface $appCache
+        private readonly EntityManagerInterface $em,
+        private readonly ConfigItemRepository $repository,
+        private readonly CacheInterface $appCache,
+        private readonly GenericFileUploader $fileUploader
     ) {
     }
 
@@ -59,6 +61,27 @@ class ConfigService
         }
 
         return $config;
+    }
+
+    public function handleConfigFormSubmit(FormInterface $form): void
+    {
+        foreach ($form->getData() as $key => $value) {
+            if (str_starts_with($key, '_')) {
+                continue;
+            }
+            $this->setConfigKey($key, $value);
+        }
+
+        if ($form->has('logo')) {
+
+            $file = $form->get('logo')->getData();
+            if (!$file) {
+                return;
+            }
+            $value = $this->fileUploader->upload($file);
+            $this->setConfigKey('logo', $value);
+        }
+
     }
 
 }

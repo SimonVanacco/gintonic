@@ -6,7 +6,25 @@
     <h1>{{ 'Edit Appearance'|trans }}</h1>
 
     {{ form_start(form, {'attr': {'data-controller': 'loading-submit', 'data-action': 'loading-submit#submit turbo:submit-end->loading-submit#end'}}) }}
-    {{ form_widget(form) }}
+
+    {{ form_label(form.logo) }}
+    {{ form_errors(form.logo) }}
+    <div class="row">
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            {{ form_widget(form.logo) }}
+        </div>
+        <div class="col-md-6">
+            {% if appConfig.getConfigItem('logo') %}
+                <img src="{{ asset(uploads_directory ~ "/" ~ appConfig.getConfigItem('logo')) }}" alt="Current logo" width="200px"/>
+            {% else %}
+                <img alt="Logo" src="{{ asset('images/default-logo.svg') }}" width="200px">
+            {% endif %}
+        </div>
+    </div>
+
+    {{ form_row(form.theme) }}
+    {{ form_row(form.themePrimaryColor) }}
+
     <button class="btn btn-outline-primary" data-loading-submit-target="button">{{ button_label|default('Save'|trans) }}</button>
     {{ form_end(form) }}
 
