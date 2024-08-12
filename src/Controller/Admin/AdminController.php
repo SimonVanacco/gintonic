@@ -42,7 +42,7 @@ class AdminController extends AbstractController
             'label' => $this->translator->trans('Orders'),
             'count' => $count,
             'icon'  => 'fas fa-receipt',
-            'link'  => $this->generateUrl('order_admin_index'),
+            'link'  => $this->generateUrl('app_admin_orderadmin_index'),
         ]);
     }
 
@@ -55,7 +55,7 @@ class AdminController extends AbstractController
             'label' => $this->translator->trans('Orders today'),
             'count' => $count,
             'icon'  => 'fas fa-receipt',
-            'link'  => $this->generateUrl('order_admin_index'),
+            'link'  => $this->generateUrl('app_admin_orderadmin_index'),
         ]);
     }
 
