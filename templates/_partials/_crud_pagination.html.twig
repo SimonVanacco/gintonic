@@ -1,0 +1,14 @@
+<div>
+    {% if maxPages > 1 %}
+        <a href="{{ path(routePrefix ~ '_index') }}" class="btn btn-primary">{{ 'First' | trans }}</a>
+        {% if currentPage > 1 %}
+            <a href="{{ path(routePrefix ~ '_index_1', {'page': currentPage - 1}) }}" class="btn btn-primary">{{ 'Previous' | trans }}</a>
+        {% endif %}
+        <b>Page {{ currentPage }} / {{ maxPages }}</b>
+
+        {% if currentPage < maxPages %}
+            <a href="{{ path(routePrefix ~ '_index_1', {'page': currentPage + 1}) }}" class="btn btn-primary">{{ 'Next' | trans }}</a>
+        {% endif %}
+        <a href="{{ path(routePrefix ~ '_index_1', {'page': maxPages}) }}" class="btn btn-primary">{{ 'Last' | trans }}</a>
+    {% endif %}
+</div>

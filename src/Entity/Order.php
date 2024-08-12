@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: '`order`')]
 class Order
 {
-
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -27,6 +26,10 @@ class Order
 
     #[ORM\OneToMany(targetEntity: OrderItem::class, mappedBy: 'parent', cascade: ['persist', 'remove'])]
     private Collection $items;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?OrderStatus $status = null;
 
     public function __construct()
     {
@@ -89,6 +92,18 @@ class Order
                 $item->setParent(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getStatus(): ?OrderStatus
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?OrderStatus $status): static
+    {
+        $this->status = $status;
 
         return $this;
     }

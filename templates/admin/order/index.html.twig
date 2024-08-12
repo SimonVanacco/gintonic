@@ -5,23 +5,43 @@
 {% block content %}
     <h1>{{ 'Orders'|trans }}</h1>
 
+    {{ form_start(filterForm) }}
+        <div class="row my-4">
+            <div class="col">
+                {{ form_label(filterForm.name) }}
+                {{ form_errors(filterForm.name) }}
+                {{ form_widget(filterForm.name) }}
+            </div>
+            <div class="col">
+                {{ form_label(filterForm.status) }}
+                {{ form_errors(filterForm.status) }}
+                {{ form_widget(filterForm.status) }}
+            </div>
+            <div class="col d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">{{ 'Filter'|trans }}</button>
+            </div>
+        </div>
+    {{ form_end(filterForm) }}
+
     <table class="table">
         <thead>
         <tr>
             <th>{{ 'Id'|trans }}</th>
             <th>{{ 'Name'|trans }}</th>
+            <th>{{ 'Status'|trans }}</th>
             <th>{{ 'Date'|trans }}</th>
             <th>{{ 'Actions'|trans }}</th>
         </tr>
         </thead>
         <tbody>
-        {% for order in orders %}
+        {% for order in entities %}
             <tr>
                 <td>{{ order.id }}</td>
                 <td>{{ order.name }}</td>
+                <td>{{ order.status | trans }}</td>
                 <td>{{ order.createdAt|format_datetime('short', 'short') }}</td>
                 <td>
-                    <a href="{{ path('order_admin_show', {'id': order.id}) }}">{{ 'Show'|trans }}</a>
+                    <a href="{{ path('app_admin_orderadmin_show', {'id': order.id}) }}">{{ 'Show'|trans }}</a>
                 </td>
             </tr>
         {% else %}
@@ -31,4 +51,6 @@
         {% endfor %}
         </tbody>
     </table>
+
+    {% include '_partials/_crud_pagination.html.twig' %}
 {% endblock %}
