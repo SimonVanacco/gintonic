@@ -43,5 +43,4 @@ class OrderAdminController extends AbstractCrudController
         return $this->redirectToRoute('app_admin_order_index');
     }
 
-
 }
