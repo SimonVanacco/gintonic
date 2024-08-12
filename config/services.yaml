@@ -6,6 +6,7 @@
 parameters:
     ingredients_directory: '/uploads/ingredients'
     cocktails_directory: '/uploads/cocktails'
+    uploads_directory: '/uploads'
     app_version: '%env(APP_VERSION)%'
 services:
     # default configuration for services in *this* file
@@ -30,3 +31,5 @@ services:
         arguments: ['%ingredients_directory%', '%kernel.project_dir%']
     App\Service\CocktailFileUploader:
         arguments: [ '%cocktails_directory%', '%kernel.project_dir%']
+    App\Service\GenericFileUploader:
+        arguments: [ '%uploads_directory%', '%kernel.project_dir%']

@@ -6,31 +6,36 @@ use App\Entity\Cocktail;
 use App\Entity\CocktailIngredient;
 use App\Entity\Unit;
 use App\Form\CocktailIngredientType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/admin/cocktail')]
-class CocktailIngredientAdminController extends AbstractController {
+class CocktailIngredientAdminController extends AbstractController
+{
 
     #[Route('/{cocktail}/ingredient/', name: 'cocktail_ingredient_admin_index', methods: ['GET'])]
-    public function index(Cocktail $cocktail): Response {
+    public function index(Cocktail $cocktail): Response
+    {
         return $this->render('admin/cocktail_ingredient/index.html.twig', [
             'cocktail' => $cocktail,
         ]);
     }
 
-    #[Route('/{cocktail}/ingredient/new', name: 'cocktail_ingredient_admin_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, Cocktail $cocktail, EntityManagerInterface $entityManager): Response {
-
+    #[Route('/{cocktail}/ingredient/new', name: 'cocktail_ingredient_admin_new', methods: [
+        'GET',
+        'POST',
+    ])]
+    public function new(Request $request, Cocktail $cocktail, EntityManagerInterface $entityManager): Response
+    {
         $default = new CocktailIngredient();
         $default->setUnit($entityManager->find(Unit::class, Unit::DEFAULT));
 
         $form = $this->createForm(CocktailIngredientType::class, $default, [
-            'action' => $this->generateUrl('cocktail_ingredient_admin_new', ['cocktail' => $cocktail->getId()])
+            'action' => $this->generateUrl('cocktail_ingredient_admin_new', ['cocktail' => $cocktail->getId()]),
         ]);
         $form->handleRequest($request);
 
@@ -39,32 +44,41 @@ class CocktailIngredientAdminController extends AbstractController {
             $cocktail->addIngredient($entity);
             $entityManager->persist($entity);
             $entityManager->flush();
+
             return $this->redirectToRoute('cocktail_ingredient_admin_index', ['cocktail' => $cocktail->getId()]);
         }
 
-        return $this->renderForm('admin/cocktail_ingredient/create.html.twig', [
+        return $this->render('admin/cocktail_ingredient/create.html.twig', [
             'cocktail' => $cocktail,
-            'form' => $form,
+            'form'     => $form,
         ]);
     }
 
-    #[Route('/{cocktail}/ingredient/{id}/edit', name: 'cocktail_ingredient_admin_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Cocktail $cocktail, int $id, EntityManagerInterface $entityManager): Response {
+    #[Route('/{cocktail}/ingredient/{id}/edit', name: 'cocktail_ingredient_admin_edit', methods: [
+        'GET',
+        'POST',
+    ])]
+    public function edit(Request $request, Cocktail $cocktail, int $id, EntityManagerInterface $entityManager): Response
+    {
         $cocktailIngredient = $entityManager->find(CocktailIngredient::class, $id);
         if (!$cocktailIngredient || !$cocktail->getIngredients()->contains($cocktailIngredient)) {
             throw new NotFoundHttpException();
         }
         $form = $this->createForm(CocktailIngredientType::class, $cocktailIngredient, [
-            'action' => $this->generateUrl('cocktail_ingredient_admin_edit', ['cocktail' => $cocktail->getId(), 'id' => $id])
+            'action' => $this->generateUrl(
+                'cocktail_ingredient_admin_edit',
+                ['cocktail' => $cocktail->getId(), 'id' => $id]
+            ),
         ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
+
             return $this->redirectToRoute('cocktail_ingredient_admin_index', ['cocktail' => $cocktail->getId()]);
         }
 
-        return $this->renderForm('admin/cocktail_ingredient/edit.html.twig', [
+        return $this->render('admin/cocktail_ingredient/edit.html.twig', [
             'cocktail' => $cocktail,
             'cocktailIngredient' => $cocktailIngredient,
             'form' => $form,
@@ -72,7 +86,12 @@ class CocktailIngredientAdminController extends AbstractController {
     }
 
     #[Route('/{cocktail}/ingredient/{id}/delete', name: 'cocktail_ingredient_admin_delete', methods: ['POST'])]
-    public function delete(Request $request, Cocktail $cocktail, int $id, EntityManagerInterface $entityManager): Response {
+    public function delete(
+        Request $request,
+        Cocktail $cocktail,
+        int $id,
+        EntityManagerInterface $entityManager
+    ): Response {
         $cocktailIngredient = $entityManager->find(CocktailIngredient::class, $id);
         if (!$cocktailIngredient || !$cocktail->getIngredients()->contains($cocktailIngredient)) {
             throw new NotFoundHttpException();

@@ -1,16 +1,20 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/_functions.scss";
 
 // 2. Include any default variable overrides here
-$body-bg: #202026;
-$body-color: #fff;
-//$dark: #323136;
+
+// GINTONIC VARIABLES
+// These variables can be overwritten by the user in the appearance settings
+$body-bg-dark: #202026;
 $primary: #A88C6A;
-//$secondary: #A88C6A;
-$dark: darken($body-bg, 1.3);
+
+
+
+$dark: darken($body-bg-dark, 1.3);
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
 
@@ -46,8 +50,21 @@ $dark: darken($body-bg, 1.3);
 
 @import 'tom-select/dist/css/tom-select.bootstrap5.css';
 
-html, body {
-  height: 100%;
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+main {
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 body > .container {
@@ -105,8 +122,14 @@ a.widget-top-link {
 
 // Autocomplete
 
-//.autocomplete-wrapper {
-//  .dropdown-menu {
-//    display: inherit;
-//  }
-//}
+.ts-dropdown-content {
+  color: white !important;
+}
+
+.ts-control .item {
+  color: white !important;
+}
+
+.ts-wrapper.multi .ts-control > div {
+  background-color: $primary;
+}

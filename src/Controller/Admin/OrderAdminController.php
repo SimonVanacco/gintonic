@@ -6,13 +6,15 @@ use App\Entity\Order;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/admin/order')]
-class OrderAdminController extends AbstractController {
+class OrderAdminController extends AbstractController
+{
 
     #[Route('/', name: 'order_admin_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager): Response {
+    public function index(EntityManagerInterface $entityManager): Response
+    {
         $orders = $entityManager
             ->getRepository(Order::class)
             ->findBy([], ['createdAt' => 'DESC']);
@@ -23,7 +25,8 @@ class OrderAdminController extends AbstractController {
     }
 
     #[Route('/{id}', name: 'order_admin_show', methods: ['GET'])]
-    public function show(Order $order): Response {
+    public function show(Order $order): Response
+    {
         return $this->render('admin/order/show.html.twig', [
             'order' => $order,
         ]);

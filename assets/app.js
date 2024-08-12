@@ -1,7 +1,5 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import './styles/app.scss';
-
 import 'bootstrap';
 
 import './bootstrap';
@@ -20,3 +18,7 @@ document.addEventListener("turbo:load", function() {
         });
     });
 })
+
+document.addEventListener("turbo:render", function() {
+    WysiwygEditor.init();
+});

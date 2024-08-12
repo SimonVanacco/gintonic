@@ -1,17 +1,23 @@
-{# Todo : make it possible to remove items from widget #}
 <turbo-frame id="admin-widget-shopping">
-    <div class="card text-white bg-dark widget-flat">
+    <div class="card text-white bg-dark widget-flat" data-controller="shopping-list">
         <div class="card-body">
             <div class="float-end">
                 <i class="fas fa-shopping-cart widget-icon"></i>
             </div>
             <h5 class="text-muted fw-normal mt-0">{{ 'Shopping list' | trans }}</h5>
             {% if ingredients %}
-                <ul class="mt-4">
+                <div class="d-flex mt-4 flex-column">
                     {% for ingredient in ingredients %}
-                        <li>{{ ingredient }}</li>
+                        <div class="shopping-list-item" data-payload="{{ boolean_payload(ingredient, 'isToBuy') }}">
+                            <div class="form-check">
+                                <input data-action="shopping-list#checkboxChanged" class="form-check-input" type="checkbox" value="{{ ingredient.id }}" id="shopping-list-{{ loop.index }}">
+                                <label class="form-check-label" for="shopping-list-{{ loop.index }}">
+                                    {{ ingredient }}
+                                </label>
+                            </div>
+                        </div>
                     {% endfor %}
-                </ul>
+                </div>
             {% else %}
                 <span class="text-nowrap">{{ 'Nothing to buy !' | trans }}</span>
             {% endif %}

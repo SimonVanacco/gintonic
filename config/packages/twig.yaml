@@ -5,6 +5,7 @@ twig:
     globals:
         ingredients_directory: '%ingredients_directory%'
         cocktails_directory: '%cocktails_directory%'
+        uploads_directory: '%uploads_directory%'
         app_version: '%env(APP_VERSION)%'
         appConfig: '@App\Service\ConfigService'
     paths:
