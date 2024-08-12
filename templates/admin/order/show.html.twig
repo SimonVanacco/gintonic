@@ -3,21 +3,21 @@
 {% block title %}Order{% endblock %}
 
 {% block content %}
-    <h1>Order #{{ order.id }}</h1>
+    <h1>Order #{{ entity.id }}</h1>
 
     <table class="table">
         <tbody>
         <tr>
             <th>{{ 'Id'|trans }}</th>
-            <td>{{ order.id }}</td>
+            <td>{{ entity.id }}</td>
         </tr>
         <tr>
             <th>{{ 'Name'|trans }}</th>
-            <td>{{ order.name }}</td>
+            <td>{{ entity.name }}</td>
         </tr>
         <tr>
             <th>{{ 'Date'|trans }}</th>
-            <td>{{ order.createdAt|format_datetime('short', 'short') }}</td>
+            <td>{{ entity.createdAt|format_datetime('short', 'short') }}</td>
         </tr>
         </tbody>
     </table>
@@ -32,7 +32,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for item in order.items %}
+            {% for item in entity.items %}
                 <tr>
                     <td>{{ item.cocktail }}</td>
                     <td>
@@ -43,5 +43,5 @@
             </tbody>
         </table>
     </div>
-    <a href="{{ path('order_admin_index') }}" class="btn btn-outline-secondary">{{ 'Back to list'|trans }}</a>
+    <a href="{{ path('app_admin_orderadmin_index') }}" class="btn btn-outline-secondary">{{ 'Back to list'|trans }}</a>
 {% endblock %}

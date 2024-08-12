@@ -15,7 +15,7 @@
             </a>
         </li>
         <li>
-            <a {% if 'order_admin_' in route_name %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="{{ path('order_admin_index') }}">
+            <a {% if 'app_admin_orderadmin_' in route_name %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="{{ path('app_admin_orderadmin_index') }}">
                 <i class="fa-solid fa-clipboard-list pe-1"></i>
                 {{ 'Orders'|trans }}
             </a>
