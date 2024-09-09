@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -328,6 +328,34 @@
       <trans-unit id="k1iate7" resname="Leave empty if you do not want to change the password">
         <source>Leave empty if you do not want to change the password</source>
         <target>Laissez video si vous ne voulez pas changer de mot de passe</target>
+      </trans-unit>
+      <trans-unit id="KmitrVd" resname="First">
+        <source>First</source>
+        <target>Premier</target>
+      </trans-unit>
+      <trans-unit id="ouNrIYq" resname="Previous">
+        <source>Previous</source>
+        <target>Précédent</target>
+      </trans-unit>
+      <trans-unit id="gefhnBC" resname="Next">
+        <source>Next</source>
+        <target>Suivant</target>
+      </trans-unit>
+      <trans-unit id="Fu352lL" resname="Last">
+        <source>Last</source>
+        <target>Dernier</target>
+      </trans-unit>
+      <trans-unit id="yMchIJ3" resname="Edit Appearance">
+        <source>Edit Appearance</source>
+        <target>Modifier l'apparence</target>
+      </trans-unit>
+      <trans-unit id="6xCSWiZ" resname="Status">
+        <source>Status</source>
+        <target>Statut</target>
+      </trans-unit>
+      <trans-unit id="WH7TEyw" resname="Appearance">
+        <source>Appearance</source>
+        <target>Apparence</target>
       </trans-unit>
     </body>
   </file>
