@@ -16,6 +16,7 @@ Gintonic is a bar manager aimed at associative bars and home baristas : add the 
 - Add ingredients to shopping list
 - Customization options (your logo, your name, your colors)
 - Receive orders (no payment yet !)
+- LANGUAGES : Available in English and French
 
 ## Todo list
 - [ ]  Allow to disable features when not needed (ingredients availability) 
