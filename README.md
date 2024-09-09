@@ -1,7 +1,9 @@
 
 # Gintonic
 
-Gintonic is a self-hosted homebar manager : add the cocktails you love to make and let your friends browse through the available recipes !
+Gintonic is a bar manager aimed at associative bars and home baristas : add the cocktails you love to make and let your clients/friends browse through the available recipes !
+
+100% free and open-source, feel free to self-host and send your feedback !
 
 ![Index page](public/screenshots/index.png)
 ![Admin dashboard](public/screenshots/dashboard.png)
@@ -12,22 +14,23 @@ Gintonic is a self-hosted homebar manager : add the cocktails you love to make a
 - Configure ingredients
 - Show cocktails based on ingredients availability
 - Add ingredients to shopping list
-- Receive orders (still WIP)
+- Customization options (your logo, your name)
+- Receive orders (no payment yet !)
 
 
 ## Todo list
-- [ ]  Allow customization options (custom CSS, logo, footer)
+- [ ]  Allow to disable features when not needed (ingredients availability) 
 - [ ]  Add a basket to order multiple cocktails at once
 - [ ]  Provide default cocktails, ingredients, units & glasses when installing
 
 ## Installation
 
-Gintonic is a fairly standard Symfony 6 application which requires :
+Gintonic is a fairly standard Symfony 7 application which requires :
 
 - A webserver of your choice
-- PHP 8.2+, Composer, Npm / Yarn
-- A MySQL server
-- A SMTP server (if you want to get mail notifications)
+- PHP 8.3, Composer, Npm or Yarn
+- A MariaDB (or MySQL) server
+- An SMTP server (if you want to get mail notifications)
 
 First clone the projet, then copy the .env file to .env.local and edit the newly created file with the configuration needed.
 The options are documented in the file.
